@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 -- Base de données :  `simple-mvc`
 --
 
+
 -- --------------------------------------------------------
 
 --
@@ -61,3 +62,37 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+CREATE TABLE `event` (
+ `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ `name` varchar(50) NOT NULL,
+ `place` varchar(150) NOT NULL,
+ `hour` varchar(50) NOT NULL,
+`date` DATETIME NOT NULL
+);
+
+
+CREATE TABLE `product` (
+ `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ `type` varchar(50) NOT NULL,
+ `name` varchar(50) NOT NULL,
+ `description` TEXT NOT NULL,
+`information` TEXT NOT NULL
+);
+
+
+CREATE TABLE `devis` (
+  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `address` varchar(255),
+  `delivery` BOOLEAN default 0,
+  `comment` TEXT,
+  `product_id` INT NOT NULL,
+  CONSTRAINT fk_devis_product
+    FOREIGN KEY (product_id) REFERENCES product(id)
+);
