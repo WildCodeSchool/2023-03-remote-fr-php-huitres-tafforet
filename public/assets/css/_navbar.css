@@ -89,6 +89,8 @@ nav {
     .burger {
       display: block;
       cursor: pointer;
+      width: auto;
+      margin-bottom: 0;
     }
 
     .burger.active .line:nth-child(1) {
