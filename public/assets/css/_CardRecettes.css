@@ -57,12 +57,14 @@
     gap: 2rem;
     align-items: center;
     margin-top: 1rem;
+
 }
 
 .article-image {
     width: 250px;
     height: 250px;
     padding: 0.5rem;
+    border-radius: 15px;
 }
 
 .article-image-right {
