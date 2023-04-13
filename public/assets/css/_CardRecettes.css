@@ -1,0 +1,176 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+
+.article,
+.artl-2,
+.artl-3 {
+    background-color: var(--card-clear-color);
+    position: relative;
+    padding-bottom: 2rem;
+
+}
+
+.artl-3 {
+    background-color: var(--primary-inverse);
+}
+
+.artl-2 {
+    background-color: var(--card-dark-color);
+    color: white;
+}
+
+.artl-2-custom .article-title {
+    color: var(--primary-inverse);
+}
+
+.custom-color {
+    color: var(--primary-inverse);
+}
+
+.custom-list {
+    color: white;
+}
+
+
+.article-title {
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: center;
+    color: black;
+}
+
+.article-content {
+    display: flex;
+}
+
+.article-text {
+    text-align: center;
+    margin: 0;
+}
+
+.article-images {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.article-image {
+    width: 250px;
+    height: 250px;
+    padding: 0.5rem;
+}
+
+.article-image-right {
+    margin-left: auto;
+    width: 240px;
+    height: 440px;
+}
+
+.article-text-left {
+    justify-self: start;
+}
+
+.article-image-left {
+    margin-top: 1rem;
+    width: 300px;
+    height: 460px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.left-col,
+.right-col {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 0.5rem;
+}
+
+.article-text ul {
+    padding-left: 1rem;
+}
+
+.preparation {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: start;
+}
+
+@media (max-width: 1024px) {
+    .article-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .article-image-right {
+        width: 200px;
+        height: 400px;
+    }
+
+    .article-image-left {
+        width: 250px;
+        height: 410px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .article-content {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .preparation {
+        position: static;
+        margin-bottom: 1rem;
+
+    }
+
+    .article-images {
+        margin-top: 0;
+    }
+
+    .article-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .article-image-right {
+        width: 100%;
+        height: auto;
+    }
+
+    .article-image-left {
+        width: 100%;
+        height: auto;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .left-col,
+    .right-col {
+        width: 100%;
+    }
+
+    .hide-image-1-phone {
+        display: none;
+    }
+
+    .hide-image-4-phone {
+        display: none;
+    }
+}
