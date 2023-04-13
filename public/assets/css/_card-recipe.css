@@ -108,19 +108,54 @@
 }
 
 @media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .article-content {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .preparation {
+        position: static;
+        margin-bottom: 1rem;
+    }
+
+    .article-images {
+        margin-top: 0;
+    }
+
     .article-image {
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        height: auto;
     }
 
     .article-image-right {
-        width: 200px;
-        height: 400px;
+        width: 100%;
+        height: auto;
     }
 
     .article-image-left {
-        width: 250px;
-        height: 410px;
+        width: 100%;
+        height: auto;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .left-col,
+    .right-col {
+        width: 100%;
+    }
+
+    .hide-image-1-phone {
+        display: none;
+    }
+
+    .hide-image-4-phone {
+        display: none;
     }
 }
 
