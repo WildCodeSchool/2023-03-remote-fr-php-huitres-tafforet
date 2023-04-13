@@ -13,8 +13,9 @@ nav {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
 
-  .logo img {
-    max-width: 100px;
+  .logo a {
+    max-width: 120px;
+    padding:0;
   }
 
   .menu {
