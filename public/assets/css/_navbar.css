@@ -7,14 +7,14 @@
 nav {
     min-width: 100%;
     align-items: center;
-    padding: 25px;
-    height: 90px;
+    padding: 1.563rem;
+    height: 5.625rem;
     background-color: var(--primary);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .logo a {
-    max-width: 120px;
+    max-width: 7.5rem;
     padding:0;
   }
 
@@ -28,7 +28,7 @@ nav {
   }
 
   .menu li {
-    margin-right: 20px;
+    margin-right: 1.25rem;
     white-space: nowrap;
   }
 
@@ -45,10 +45,10 @@ nav {
   }
 
   .line {
-    width: 25px;
-    height: 3px;
+    width: 1.563rem;
+    height: 0.188rem;
     background-color: var(--primary-inverse);
-    margin: 5px;
+    margin: 0.313rem;
   }
 
   .dropdown {
@@ -60,10 +60,10 @@ nav {
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 200px;
+    min-width: 12.5rem;
     list-style: none;
     background-color: var(--primary);
-    padding: 10px 0;
+    padding: 0.625rem 0;
   }
 
   .dropdown-menu li {
@@ -109,18 +109,18 @@ nav {
       align-items: flex-start;
       position: absolute;
       gap: 0;
-      top: 89px;
+      top: 5.563rem;
       left: 70%;
       width: 30%;
       background-color: var(--primary);
-      padding: 0px;
+      padding: 0;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
       border: 2px solid #BABA9C
     }
 
     .menu.active li {
       margin-right: 0;
-      margin-bottom: 10px;
+      margin-bottom: 0.625rem;
     }
 
     .menu.active .dropdown-menu {
