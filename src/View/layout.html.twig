@@ -15,7 +15,8 @@
 
 		<body>
 			{% include 'Include/_navbar.html.twig' %}
-			{% block content %}{% endblock %}
+			<main class="container-fluid"> {% block content %}{% endblock %}
+                </main>
 			{% block javascript %}{% endblock %}
 
             {% include 'Include/_footerbar.html.twig' %}
