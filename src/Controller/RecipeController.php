@@ -23,7 +23,7 @@ class RecipeController extends AbstractController
             ],
             [
                 'name' => 'Eclade de moules',
-                'image1' => 'éclade.jpg',
+                'image1' => 'eclade.jpg',
                 'content' => '<ul>
                 <li>2 litres de moules</li>
                 <li>Aiguilles de pin séchées</li>
