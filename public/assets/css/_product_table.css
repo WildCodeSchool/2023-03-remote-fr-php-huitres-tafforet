@@ -24,7 +24,7 @@ thead tr {
     background-color: var(--primary);
 }
 
-tr th:first-child {
+tbody tr th:first-child {
     font-weight: 600;
 }
 
