@@ -1,0 +1,119 @@
+section.recipes-container {
+    display: grid;
+    gap: calc(var(--spacing) *5);
+}
+
+section.recipes-container>article a {
+    margin-top: auto;
+
+}
+
+section.recipes-container>article {
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+
+}
+
+
+
+section.recipes-container>article>h2 {
+    text-align: center;
+    color: black;
+}
+
+section.recipes-container>article h3 {
+    color: black;
+}
+
+
+@media screen and (min-width: 768px) {
+    section.recipes-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.content-container {
+    display: flex;
+}
+
+.text-content, .image-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.5rem;
+    padding: 0.5rem;
+
+}
+
+.image-content {
+    object-fit: cover;
+
+}
+
+.image-content img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+}
+
+.text-content ul li {
+    padding-bottom: 0.5rem;
+}
+
+
+/* Article 1 */
+
+section.recipes-container>article:nth-child(1) .content-container {
+    flex-direction: row-reverse;
+}
+
+/* Article 2 */
+
+section.recipes-container>article:nth-child(2) .content-container {
+    flex-direction: row;
+}
+
+section.recipes-container>article:nth-child(2) {
+    background-color: var(--primary);
+}
+
+section.recipes-container>article:nth-child(2)>h2 {
+    color: var(--primary-inverse)
+}
+
+section.recipes-container>article:nth-child(2) .text-content h3 {
+    color: white;
+}
+
+section.recipes-container>article:nth-child(2) .text-content ul li {
+    color: white;
+}
+
+section.recipes-container>article:nth-child(2) a {
+    background-color: var(--primary-inverse);
+    color: black;
+}
+
+/* Article 3 */
+section.recipes-container>article:nth-child(3) .content-container {
+    flex-direction: row-reverse;
+}
+
+section.recipes-container>article:nth-child(3) {
+    background-color: var(--primary-inverse);
+}
+
+/* Article 4 */
+
+section.recipes-container>article:nth-child(4) .content-container {
+    flex-direction: row;
+}
+
+section.recipes-container>article:nth-child(4) a {
+    background-color: var(--primary-inverse);
+    color: black;
+    border: none;
+}

@@ -1,0 +1,123 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Produits
+{% endblock %}
+
+{% block content %}
+
+	<h1 class="title_page_product">
+		Les Huîtres Tafforet
+	</h1>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Appelation Ph + couvercle</th>
+				<th scope="col">Densité par m2</th>
+				<th scope="col">Durée d'affinage</th>
+				<th scope="col">Taux de chair</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">Fine de Claires</th>
+				<td>Du 1/04 au 31/10 : 1kg
+					<br>
+					Du 1/11 au 31/03 : 3kg</td>
+				<td>Du 1/04 au 31/10 : 14 jours
+					<br>
+					Du 1/11 au 31/03 : 28 jours</td>
+				<td>entre 7 et 10,5</td>
+			</tr>
+			<tr>
+				<th scope="row">Spéciale de Claires</th>
+				<td>Du 1/04 au 31/10 : 1kg
+					<br>
+					Du 1/11 au 31/03 : 3kg</td>
+				<td>Du 1/04 au 31/10 : 14 jours
+					<br>
+					Du 1/11 au 31/03 : 28 jours</td>
+				<td>
+					> 10,5.
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">Pousse en clair</th>
+				<td>5 huîtres au m2</td>
+				<td>4 mois minimum</td>
+				<td>
+					> 12
+				</td>
+			</tr>
+			<tr class="line_table">
+				<th scope="row">Label Rouge (verdissement)</th>
+				<td>Du 1/04 au 31/10 : 1kg
+					<br>
+					Du 1/11 au 31/03 : 3kg</td>
+				<td>Du 1/04 au 31/10 : 14 jours
+					<br>
+					Du 1/11 au 31/03 : 28 jours</td>
+				<td>de 9 à 10,5</td>
+			</tr>
+		</tbody>
+	</table>
+	<form>
+        <div>
+          <label for="nom">Nom:</label>
+          <input type="text" id="nom" name="nom">
+        </div>
+        <div>
+          <label for="prenom">Prénom:</label>
+          <input type="text" id="prenom" name="prenom">
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div>
+          <label for="telephone">Téléphone:</label>
+          <input type="number" id="telephone" name="telephone">
+        </div>
+        <div>
+          <label for="ville">Ville:</label>
+          <input type="text" id="ville" name="ville">
+        </div>
+        <div>
+          <label for="pays">Pays:</label>
+          <input type="text" id="pays" name="pays">
+        </div>
+        <div>
+		<fieldset>
+  <legend>Choix des produits:</legend>
+  <div>
+    <input type="checkbox" id="choix" name="choix" value="Fines de claires" />
+    <label for="Fines de claires">Fines de claires</label>
+  </div>
+  <div>
+    <div>
+    <input type="checkbox" id="choix" name="choix" value="Spéciales de claires" />
+    <label for="Spéciales de claires">Spéciales de claires</label>
+  </div>
+  <div>
+    <input type="checkbox" id="choix" name="choix" value="Spéciales de claires" />
+    <label for="Label rouge (verdissement)">Label rouge (verdissement)</label>
+  </div>
+  <div>
+    <input type="checkbox" id="choix" name="choix" value="Pousses en claires" />
+    <label for="Pousses en claires">Pousses en claires</label>
+  </div>
+  <div>
+    <input type="checkbox" id="choix" name="choix" value="Moules de Bouchot" />
+    <label for="coding">Moules de Bouchot</label>
+  </div>
+  <div>
+    <input type="checkbox" id="choix" name="choix" value="Moules d'Irlande" />
+    <label for="coding">Moules d'Irlande</label>
+  </div>
+  <div>
+          <label for="commentaire">Commentaires:</label>
+          <input type="number" id="commentaire" name="telephone">
+        </div>
+</fieldset>
+        <button type="submit">Envoyer</button>
+      </form>
+{% endblock %}

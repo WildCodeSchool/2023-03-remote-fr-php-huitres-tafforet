@@ -1,0 +1,11 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 5rem;
+}
+
+body>main {
+    padding-top: 0;
+}
