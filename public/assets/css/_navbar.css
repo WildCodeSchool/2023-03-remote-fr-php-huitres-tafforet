@@ -9,8 +9,7 @@ main {
 nav {
     min-width: 100%;
     align-items: center;
-    padding: 1.563rem;
-    height: 5.625rem;
+    padding: 0.5rem;
     background-color: var(--primary);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -18,8 +17,8 @@ nav {
   }
 
   .logo a {
-    max-width: 9rem;
-    padding:0;
+    max-width: 6rem;
+
   }
 
   .menu {
