@@ -6,7 +6,6 @@ h2 {
     text-align: center;
     border-radius: 12px;
 }
-
 form {
     width: 80%;
     margin-left: 10%;
@@ -16,6 +15,9 @@ input:not([type=checkbox],[type=radio]), select, textarea {
     width: 60%;
     margin-left: 20%;
 }
+input[type="checkbox"]:checked {
+    background-color: var(--primary);
+  }
 .label-classique, fieldset {
     margin-left: 20%;
 }
