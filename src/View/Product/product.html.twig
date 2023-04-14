@@ -1,0 +1,63 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Produits
+{% endblock %}
+
+{% block content %}
+
+	<h1 class="title_page_product">
+		Les Huîtres Tafforet
+	</h1>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Appelation Ph + couvercle</th>
+				<th scope="col">Densité par m2</th>
+				<th scope="col">Durée d'affinage</th>
+				<th scope="col">Taux de chair</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">Fine de Claires</th>
+				<td>Du 1/04 au 31/10 : 1kg
+					<br>
+					Du 1/11 au 31/03 : 3kg</td>
+				<td>Du 1/04 au 31/10 : 14 jours
+					<br>
+					Du 1/11 au 31/03 : 28 jours</td>
+				<td>entre 7 et 10,5</td>
+			</tr>
+			<tr>
+				<th scope="row">Spéciale de Claires</th>
+				<td>Du 1/04 au 31/10 : 1kg
+					<br>
+					Du 1/11 au 31/03 : 3kg</td>
+				<td>Du 1/04 au 31/10 : 14 jours
+					<br>
+					Du 1/11 au 31/03 : 28 jours</td>
+				<td>
+					> 10,5.
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">Pousse en clair</th>
+				<td>5 huîtres au m2</td>
+				<td>4 mois minimum</td>
+				<td>
+					> 12
+				</td>
+			</tr>
+			<tr class="line_table">
+				<th scope="row">Label Rouge (verdissement)</th>
+				<td>Du 1/04 au 31/10 : 1kg
+					<br>
+					Du 1/11 au 31/03 : 3kg</td>
+				<td>Du 1/04 au 31/10 : 14 jours
+					<br>
+					Du 1/11 au 31/03 : 28 jours</td>
+				<td>de 9 à 10,5</td>
+			</tr>
+		</tbody>
+	</table>
+{% endblock %}
