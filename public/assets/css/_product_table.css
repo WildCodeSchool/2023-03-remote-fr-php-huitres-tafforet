@@ -1,0 +1,34 @@
+table {
+    width: 85%;
+    margin: auto;
+}
+
+.title_page_product {
+    text-align: center;
+}
+
+td {
+    font-size: 0.8rem;
+}
+
+th {
+
+    color : var(--primary-inverse);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--primary-focus);
+}
+
+thead tr {
+    background-color: var(--primary);
+}
+
+tbody tr th:first-child {
+    font-weight: 600;
+}
+
+tbody th
+{
+    color : var(--card-dark-color)
+}

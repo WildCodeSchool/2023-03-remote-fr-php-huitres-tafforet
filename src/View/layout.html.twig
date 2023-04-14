@@ -1,5 +1,7 @@
 <!doctype html>
+
 <html lang="fr" data-theme='light'>
+
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -15,11 +17,15 @@
 
 		<body>
 			{% include 'Include/_navbar.html.twig' %}
-
+      
 			<main class="container"> {% block content %}{% endblock %}
 				</main>
 
-				{% block javascript %}{% endblock %}
+			{% block javascript %}{% endblock %}
 
-			</body>
-		</html>
+            {% include 'Include/_footerbar.html.twig' %}
+
+			<script src="/assets/js/navbar.js"></script>
+		</body>
+	</html>
+
