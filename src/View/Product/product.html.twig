@@ -60,64 +60,63 @@
 			</tr>
 		</tbody>
 	</table>
+	<h2>Envie de commander ?</h2>
 	<form>
-        <div>
-          <label for="nom">Nom:</label>
-          <input type="text" id="nom" name="nom">
-        </div>
-        <div>
-          <label for="prenom">Prénom:</label>
-          <input type="text" id="prenom" name="prenom">
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email">
-        </div>
-        <div>
-          <label for="telephone">Téléphone:</label>
-          <input type="number" id="telephone" name="telephone">
-        </div>
-        <div>
-          <label for="ville">Ville:</label>
-          <input type="text" id="ville" name="ville">
-        </div>
-        <div>
-          <label for="pays">Pays:</label>
-          <input type="text" id="pays" name="pays">
-        </div>
-        <div>
-		<fieldset>
-  <legend>Choix des produits:</legend>
-  <div>
-    <input type="checkbox" id="choix" name="choix" value="Fines de claires" />
-    <label for="Fines de claires">Fines de claires</label>
-  </div>
-  <div>
-    <div>
-    <input type="checkbox" id="choix" name="choix" value="Spéciales de claires" />
-    <label for="Spéciales de claires">Spéciales de claires</label>
-  </div>
-  <div>
-    <input type="checkbox" id="choix" name="choix" value="Spéciales de claires" />
-    <label for="Label rouge (verdissement)">Label rouge (verdissement)</label>
-  </div>
-  <div>
-    <input type="checkbox" id="choix" name="choix" value="Pousses en claires" />
-    <label for="Pousses en claires">Pousses en claires</label>
-  </div>
-  <div>
-    <input type="checkbox" id="choix" name="choix" value="Moules de Bouchot" />
-    <label for="coding">Moules de Bouchot</label>
-  </div>
-  <div>
-    <input type="checkbox" id="choix" name="choix" value="Moules d'Irlande" />
-    <label for="coding">Moules d'Irlande</label>
-  </div>
-  <div>
-          <label for="commentaire">Commentaires:</label>
-          <input type="number" id="commentaire" name="telephone">
-        </div>
-</fieldset>
-        <button type="submit">Envoyer</button>
-      </form>
+		<div>
+			<label class="label-classique" for="nom">Nom:</label>
+			<input type="text" id="nom" name="nom">
+		</div>
+		<div>
+			<label class="label-classique" for="prenom">Prénom:</label>
+			<input type="text" id="prenom" name="prenom">
+		</div>
+		<div>
+			<label class="label-classique" for="email">Email:</label>
+			<input type="email" id="email" name="email">
+		</div>
+		<div>
+			<label class="label-classique" for="telephone">Téléphone:</label>
+			<input type="number" id="telephone" name="telephone">
+		</div>
+		<div>
+			<label class="label-classique" for="adresse">Adresse:</label>
+			<input type="text" id="adresse" name="adresse">
+		</div>
+		<div>
+			<fieldset>
+				<legend>Choix des produits:</legend>
+				<div>
+					<input type="checkbox" id="choix" name="choix" value="Fines de claires"/>
+					<label for="Fines de claires">Fines de claires</label>
+				</div>
+
+				<div>
+					<input type="checkbox" id="choix" name="choix" value="Spéciales de claires"/>
+					<label for="Spéciales de claires">Spéciales de claires</label>
+				</div>
+				<div>
+					<input type="checkbox" id="choix" name="choix" value="Spéciales de claires"/>
+					<label for="Label rouge (verdissement)">Label rouge (verdissement)</label>
+				</div>
+				<div>
+					<input type="checkbox" id="choix" name="choix" value="Pousses en claires"/>
+					<label for="Pousses en claires">Pousses en claires</label>
+				</div>
+				<div>
+					<input type="checkbox" id="choix" name="choix" value="Moules de Bouchot"/>
+					<label for="Moules de Bouchot">Moules de Bouchot</label>
+				</div>
+				<div>
+					<input type="checkbox" id="choix" name="choix" value="Moules d'Irlande"/>
+					<label for="Moules d'Irlande">Moules d'Irlande</label>
+				</div>
+			</fieldset>
+		</div>
+		<div>
+			<label class="label-classique" for="commentaire">Commentaires:</label>
+			<textarea type="textarea" name="commentaire" rows="5"></textarea>
+		</div>
+
+		<button type="submit">Demander un devis</button>
+	</form>
 {% endblock %}
