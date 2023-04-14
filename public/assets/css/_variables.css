@@ -4,7 +4,9 @@
     --primary-inverse: #BABA9C;
     --card-clear-color: #D9D9D9;
     --card-dark-color: #0E1C26;
+    --color: black;
     --background-color: #Efefef;
+
 }
 
 :root {
