@@ -1,25 +1,26 @@
 <!doctype html>
-<html lang="fr" data-theme='light'>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" href="/assets/images/favicon.png">
+<<<<<<<HEAD<htmllang="fr"data-theme='light'>=======<htmllang="fr"data-theme="light">>>>>>>> 51a6b59b70b262c003821833378ebcb83d675564
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/assets/images/favicon.png">
 
-		<title>
-			{% block title %}{% endblock %}
-		</title>
+	<title>
+		{% block title %}{% endblock %}
+	</title>
 
-		<link rel="stylesheet" href="/assets/css/style.css"> {% block stylesheet %}{% endblock %}
-		</head>
+	<link rel="stylesheet" href="/assets/css/style.css"> {% block stylesheet %}{% endblock %}
+	</head>
 
-		<body>
-			{% include 'Include/_navbar.html.twig' %}
+	<body>
+		{% include 'Include/_navbar.html.twig' %}
+		<main class="container-fluid"> {% block content %}{% endblock %}
+			</main>
+			{% block javascript %}{% endblock %}
 
-			<main class="container"> {% block content %}{% endblock %}
-				</main>
+			{% include 'Include/_footerbar.html.twig' %}
 
-				{% block javascript %}{% endblock %}
-
-			</body>
-		</html>
+			<script src="/assets/js/navbar.js"></script>
+		</body>
+	</html>
