@@ -1,103 +1,29 @@
 {% extends 'layout.html.twig' %}
 
-
-{% block title %}
-	Les recettes Tafforet - Huîtres et fruits de mer
-
-{% endblock %}
-
-
 {% block content %}
-	<div class="container">
-		<article class="article">
-			<h2 class="article-title">Huîtres, poivron confit et lard</h2>
-			<div class="article-content">
-				<p class="article-text">
-					<ul>
-						<strong>Ingrédients (2 personnes)</strong>
-						<li>Pour un plat : calibre N° 2 ou N°3</li>
-						<li>Pour l'apéritif : calibre N° 4</li>
-						<li>10 à 12 huîtres Marennes Oléron</li>
-						<li>3 tranches de poitrine fumée</li>
-						<li>2 poivrons rouge</li>
-					</ul>
-				</p>
-				<div class="article-images">
-					<img class="article-image" src="/assets/images/pleindhuitre.png" alt="Huîtres avec poivron confit et lard">
-					<img class="article-image hide-image-1-phone" src="/assets/images/huitrecitron.png" alt="Présentation des huîtres, poivron confit et lard">
-				</div>
-			</div>
-			<p class="preparation">
-				Préparation : clique ici</p>
-		</article>
+	<section class="recipes-container">
+		{% for recipe in recipes %}
+			<article>
+				<h2>{{recipe.name}}</h2>
+				<div class="content-container">
+					<div class="text-content">
+						<h3>Ingrédients
+						</h3>
+						{{recipe.content|raw }}</div>
+					<div class="image-content">
+						<img src="/assets/images/{{recipe.image1}}" alt="{{recipe.name}}">
+						{% if recipe.image2 is not null %}
+							<img src="/assets/images/{{recipe.image2}}" alt="{{recipe.name}}">
+						{% endif %}
 
-		<article class="artl-2 artl-2-custom">
-			<h2 class="article-title">Huître, kiwi, gingembre et lait de coco</h2>
-			<div class="article-content column">
-				<p class="article-text article-text-left">
-					<ul class="custom-list">
-						<strong>Ingrédients (2 personnes)</strong>
-						<br><br>
-						<li>Pour l'apéritif : calibre N° 4</li>
-						<li>Pour un plat : calibre N° 3</li>
-						<li>10 à 12 huîtres Marennes Oléron</li>
-						<li>1 brique de lait ou crème de coco</li>
-						<li>50 g de gingembre frais râpé</li>
-						<li>3 kiwis</li>
-					</ul>
-				</p>
-				<img class="article-image article-image-right" src="/assets/images/assietehuitre.jpg" alt="Huître, kiw, gingembre et lait de coco">
-			</div>
-			<p class="preparation custom-color">Préparation : clique ici</p>
-		</article>
-
-		<article class="artl-3">
-			<h2 class="article-title">Éclade de moules</h2>
-			<div class="article-content grid">
-				<img class="article-image article-image-left" src="/assets/images/éclade.jpg" alt="Eclade de moule">
-				<p class="article-text">
-					<ul>
-						<strong>Ingrédients (4 personnes)</strong>
-						<li>2 litres de moules</li>
-						<li>Aiguille de pin séchées</li>
-					</ul>
-				</p>
-			</div>
-			<p class="preparation">
-				Préparation : clique ici</p>
-		</article>
-
-		<article class="article">
-			<h2 class="article-title">Huître, cacahuète, miel et sauce soja</h2>
-			<div class="article-content">
-				<div class="row">
-					<div class="left-col">
-						<p class="article-text">
-							<ul>
-								<strong>Ingrédients (2 personnes)</strong>
-								<li>Pour un plat : calibre N° 3 ou N°2</li>
-								<li>Pour l'apéritif : calibre N° 4</li>
-								<li>10 à 12 Huîtres Marennes Oléron</li>
-							</ul>
-						</p>
-						<img class="article-image hide-image-4-phone" src="/assets/images/cacahouete.jpg" alt="Cacahuètes pour la recette">
 					</div>
-					<div class="right-col">
-						<img class="article-image" src="/assets/images/huitrevin.png" alt="Huîtres prêtes à déguster">
-						<p class="article-text">
-							<ul>
-								<li>Cuillères a soupe de sauce soja par Huître Marennes Oléron servie</li>
-								<li>1/2 cuillère à café de miel par Huître Marennes Oléron servie</li>
-							</ul>
-						</p>
-						<p class="preparation">
-							Préparation : clique ici
-						</p>
-					</div>
+
 				</div>
-			</div>
-		</article>
-	</div>
+
+				<a href="#" role="button">Préparation : clique ici</a>
+
+
+			</article>
+		{% endfor %}
+	</section>
 {% endblock %}
-
-{% block javascript %}{% endblock %}
