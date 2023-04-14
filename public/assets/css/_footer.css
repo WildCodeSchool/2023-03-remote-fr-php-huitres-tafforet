@@ -25,6 +25,7 @@ body {
 
 .logo_facebook {
     transition: transform .1s;
+    margin-top: 0.5rem;
 
 }
 
@@ -43,6 +44,9 @@ body {
 
     .footer>div {
         margin-bottom: 0.4rem;
+    }
+    .label {
+        margin-top: 0.5rem;
     }
 
 }
