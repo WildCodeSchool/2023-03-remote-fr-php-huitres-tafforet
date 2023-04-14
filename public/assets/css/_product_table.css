@@ -5,6 +5,7 @@ table {
 
 .title_page_product {
     text-align: center;
+    margin-top: 4rem;
 }
 
 td {
@@ -12,7 +13,6 @@ td {
 }
 
 th {
-
     color : var(--primary-inverse);
 }
 
