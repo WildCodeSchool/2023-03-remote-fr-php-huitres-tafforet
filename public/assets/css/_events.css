@@ -1,0 +1,79 @@
+.events {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    margin: 2.5rem;
+    gap: 3rem;
+    padding: 2rem;
+    justify-content: center;
+}
+
+.imageEvent {
+    display: flex;
+    flex-direction: column;
+}
+
+.imageEvent img {
+    min-height: 15rem;
+    display: block;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-top: 1rem;
+    object-fit: cover;
+}
+
+.eventDay {
+    margin-bottom: 0;
+    border: 1px solid grey;
+    border-radius: 20px;
+    box-shadow: 20px 20px 1px var(--primary), -20px -20px 1px var(--primary);
+}
+.eventDay ul,
+h3,
+h5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.eventDay ul{
+    padding: 0 var(--spacing);
+}
+.eventDay ul li {
+    list-style: none;
+}
+.eventDay li {
+    font-size: 16px;
+    font-family: var(--font-family);
+    color: black;
+    line-height: 2rem;
+}
+.eventDay h3 {
+    font-family: var(--font-family-secondary);
+    padding: 1rem;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+@media screen and (min-width: 300px) and (max-width: 900px) {
+    .events {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        margin: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2400px) {
+    .eventDay {
+        margin-top: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 2400px) {
+    .eventDay h3 {
+        margin-top: 5rem;
+    }
+}
