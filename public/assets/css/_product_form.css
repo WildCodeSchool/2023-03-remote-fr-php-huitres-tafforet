@@ -11,11 +11,10 @@ form {
     width: 100%;
 }
 
-
 .form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1rem;
     place-items: center;
 }
 
@@ -26,9 +25,7 @@ form {
 .form-image {
     width: auto;
     border-radius: 10px;
-
 }
-
 
 label {
 	display: inline-block;
@@ -80,13 +77,14 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
     background-color: #1D334A;
     border: none;
-  }
+}
 
 .livraison {
     display: block;
     margin: auto;
 }
-button{
+
+.demande-devis-button {
     background-color: #baba9c;
     border: none;
 	color: white;
@@ -94,11 +92,11 @@ button{
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-display: block;
-margin: auto;
-width: 15rem;
-
+    display: block;
+    margin: auto;
+    width: 15rem;
 }
+
 button[type="submit"]:hover {
 	background-color: #1D334A;
 }
@@ -107,7 +105,7 @@ button[type="submit"]:hover {
     margin-bottom: 1rem;
 }
 
-
+/*RESPONSIVE*/
 
 /*@media only screen and (max-width: 1250px) {
     .choice {
