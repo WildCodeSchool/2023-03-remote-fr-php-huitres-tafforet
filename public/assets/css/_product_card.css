@@ -1,6 +1,4 @@
-:root {
-    --spacing: 0.5rem;
-}
+
 
 @media screen and (min-width: 768px) {
 .hoyster{
@@ -26,15 +24,14 @@ section.hoyster>article>p:last-child{
     text-align: center;
 }
 .hoyster_title {
-    background-color: #0E1C26;
+    background-color: var(--card-dark-color);
     width: fit-content;
     margin-top:calc(var(--spacing)*8);
     border-radius: calc(var(--border-radius)*2);
 }
 .hoyster_title {
     padding: 1rem;
-    color: #C9C081;
-
+    color: var(--card-dark-title-color)
 }
 
 .hoyster_title  span {
@@ -46,3 +43,32 @@ section.hoyster>article>div>img{
 
 
 
+.savoirfaire>div img{
+    width:100%;
+    margin : 0rem 0rem;
+}
+.savoirfaire>div{
+    background-color: #1D334A;
+    padding:1.5rem;
+    border-radius: calc(var(--border-radius)*2);
+}
+.savoirfaire>div>p{
+
+    --font-size : 0.80rem;
+    color: #C9C081;
+    font-size: var(--font-size);
+}
+
+
+.savoirfaire h2{
+    background-color: #0E1C26;
+    width: fit-content;
+    margin:2rem auto;
+    border-radius: calc(var(--border-radius)*2);
+    color: #C9C081;
+    padding: 1rem 5rem;
+    ;
+}
+.savoirfaire p{
+    margin:1rem  3rem;
+}
