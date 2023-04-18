@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Notre savoir-faire {% endblock %}
+{% block title %} Notre savoir-faire {% endblock %}
 {% block stylesheets %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>{% endblock %}
 
 {% block content %}
@@ -11,14 +11,7 @@
 		<swiper-slide><img src="/assets/images/CalibrageHuitres.jpg" alt="entrepot_huitre"></swiper-slide>
 		<swiper-slide><img src="/assets/images/notre-savoir-faire.jpg" alt="bassin"></swiper-slide>
 	</swiper-container>
-{% endblock %}
 
-{% block javascript %}
-	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
-{% block title %}Notre savoir-faire
-{% endblock %}
-
-{% block content %}
 <div class="labels-title">
 <img src="/assets/images/bg-labels.jpg" alt="">
 <h2>Nos engagements</h2>
@@ -37,3 +30,6 @@
   c’est-à-dire à répondre aux spécificités de l’ « Huître Marennes-Oléron ».</p>
 </section>
 {% endblock %}
+{% block javascript %}
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+   {% endblock %}
