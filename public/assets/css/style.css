@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap%27');
 
 @import '_variables.css';
+
+@import '_product_card.css';
+
 @import '_card-recipe.css';
 @import '_product_table.css';
 @import '_events.css';
@@ -10,3 +13,4 @@
 @import '_global.css';
 @import '_product_form.css';
 @import '_recipe-title.css';
+
