@@ -38,7 +38,6 @@ label {
 input[type="text"], input[type="email"], input[type="number"], textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
-	padding: 0.313rem;
 }
 
 fieldset {
