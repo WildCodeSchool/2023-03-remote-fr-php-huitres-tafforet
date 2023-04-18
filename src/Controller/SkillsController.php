@@ -8,5 +8,4 @@ class SkillsController extends AbstractController
     {
         return $this->twig->render('Skills/skills.html.twig');
     }
-
 }
