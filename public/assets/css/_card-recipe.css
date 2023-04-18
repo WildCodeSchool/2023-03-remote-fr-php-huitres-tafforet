@@ -57,6 +57,7 @@ section.recipes-container>article h3 {
     width: 100%;
     height: 75%;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .text-content ul li {
