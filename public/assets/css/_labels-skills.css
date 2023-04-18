@@ -1,0 +1,76 @@
+.labels-title {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+.labels-title img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border: 1px solid black;
+    border-radius: 30px;
+    max-width: 30rem;
+}
+
+.labels-title h2 {
+    z-index: 1;
+    border: 1px solid black;
+    align-self: center;
+    margin: 2rem;
+    padding: 2rem;
+    color: var(--primary-inverse);
+    background-color: var(--primary);
+    border-radius: 11px;
+    font-family: var(--font-family-secondary);
+}
+.labels-skills {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 3rem;
+    margin: 3rem;
+    padding-top: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 1rem;
+    border: 1px solid var(--primary);
+    border-radius: 11px;
+    background-color: var(--primary);
+}
+.labels-skills img {
+    object-fit: cover;
+    max-height: 10rem;
+    max-width: 10rem;
+    align-items: center;
+}
+.labels-skills p {
+    border: 1px solid var(--primary-inverse);
+    border-radius: 7px;
+    background-color: var(--primary-inverse);
+    color: black;
+    padding: 1rem;
+    font-size: 1rem;
+    padding-bottom: 2rem;
+}
+
+@media screen and (max-width:800px) {
+    .labels-skills{
+        display: flex;
+        flex-direction: column;
+        margin : 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .labels-title img{
+        max-width: 25rem;
+    }
+    .labels-title h2{
+        padding: 1rem;
+    }
+}
