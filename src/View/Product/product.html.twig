@@ -60,64 +60,59 @@
 			</tr>
 		</tbody>
 	</table>
-	<form>
-        <div>
-          <label for="nom">Nom:</label>
-          <input type="text" id="nom" name="nom">
+	 <h2 class=titre-form>Envie de commander ?</h2>
+    <form>
+        <div class="form-grid">
+            <div class="questions-grid">	
+			<p>Veuillez remplir ce formulaire pour toute demande de devis. </p>
+                <label for="nom">Nom*</label>
+                <input type="text" id="nom" name="nom" required>
+            
+            
+                <label for="prenom">Prénom*</label>
+                <input type="text" id="prenom" name="prenom" required>
+          
+           
+                <label for="adresse">Adresse*</label>
+                <input type="text" id="adresse" name="adresse" required>
+           
+                <label for="tel">Numéro de téléphone*</label>
+                <input type="tel" id="tel" name="tel" required>
+          
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <img class="form-image" src="/assets/images/image-form.jpg" alt="le port">
+
+            </div>
         </div>
-        <div>
-          <label for="prenom">Prénom:</label>
-          <input type="text" id="prenom" name="prenom">
+
+        <fieldset class="choix-section">
+            <legend>Choix des produits*</legend>
+            <div class="choix">
+                <label for="fines-de-claires"><input type="checkbox" id="fines-de-claires" name="choix-produits"
+                        value="fines-de-claires">Fines de claires</label>
+                <label for="speciales-de-claires"><input type="checkbox" id="speciales-de-claires"
+                        name="choix-produits" value="speciales-de-claires">Spéciales de claires</label>
+                <label for="label-rouge"><input type="checkbox" id="label-rouge" name="choix-produits"
+                        value="label-rouge">Label rouge</label>
+                <label for="pousses-en-claires"><input type="checkbox" id="pousses-en-claires" name="choix-produits"
+                        value="pousses-en-claires">Pousses en claires</label>
+                <label for="moules-de-bouchot"><input type="checkbox" id="moules-de-bouchot" name="choix-produits"
+                        value="moules-de-bouchot">Moules de Bouchot</label>
+                <label for="moules-d-irlande"><input type="checkbox" id="moules-d-irlande" name="choix-produits"
+                        value="moules-d-irlande">Moules d'Irlande</label>
+            </div>
+        </fieldset>
+
+        <label for="commentaires">Commentaires</label>
+        <textarea id="commentaires" name="commentaires" rows="5"></textarea>
+        <div class="livraison">
+            <input type="checkbox" id="livraison" name="livraison" value="oui">
+            <label for="livraison">Livraison (en supplément)</label>
         </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email">
-        </div>
-        <div>
-          <label for="telephone">Téléphone:</label>
-          <input type="number" id="telephone" name="telephone">
-        </div>
-        <div>
-          <label for="ville">Ville:</label>
-          <input type="text" id="ville" name="ville">
-        </div>
-        <div>
-          <label for="pays">Pays:</label>
-          <input type="text" id="pays" name="pays">
-        </div>
-        <div>
-		<fieldset>
-  <legend>Choix des produits:</legend>
-  <div>
-    <input type="checkbox" id="choix" name="choix" value="Fines de claires" />
-    <label for="Fines de claires">Fines de claires</label>
-  </div>
-  <div>
-    <div>
-    <input type="checkbox" id="choix" name="choix" value="Spéciales de claires" />
-    <label for="Spéciales de claires">Spéciales de claires</label>
-  </div>
-  <div>
-    <input type="checkbox" id="choix" name="choix" value="Spéciales de claires" />
-    <label for="Label rouge (verdissement)">Label rouge (verdissement)</label>
-  </div>
-  <div>
-    <input type="checkbox" id="choix" name="choix" value="Pousses en claires" />
-    <label for="Pousses en claires">Pousses en claires</label>
-  </div>
-  <div>
-    <input type="checkbox" id="choix" name="choix" value="Moules de Bouchot" />
-    <label for="coding">Moules de Bouchot</label>
-  </div>
-  <div>
-    <input type="checkbox" id="choix" name="choix" value="Moules d'Irlande" />
-    <label for="coding">Moules d'Irlande</label>
-  </div>
-  <div>
-          <label for="commentaire">Commentaires:</label>
-          <input type="number" id="commentaire" name="telephone">
-        </div>
-</fieldset>
-        <button type="submit">Envoyer</button>
-      </form>
+
+        <button class="demande-devis-button" type="submit">Demander un devis</button>
+    </form>
 {% endblock %}
