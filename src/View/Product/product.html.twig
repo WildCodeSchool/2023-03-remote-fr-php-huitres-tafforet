@@ -61,6 +61,43 @@
 			</tr>
 		</tbody>
 	</table>
+
+<h2 class="hoyster_title">Huitres
+			<span>à la douzaine</span>
+		</h2>
+
+<section class="hoyster">
+		{% for hoysterProduct in hoysterProducts %}
+			<article>
+				<div>
+					<img src="/assets/images/{{hoysterProduct.image}}" alt="{{wilder.name}}">
+					<h3>{{hoysterProduct.name}}</h3>
+				</div>
+				<p>
+					{{hoysterProduct.description }}
+				</p>
+
+                <div> {{hoysterProduct.maturing|raw }}</div>
+			</article>
+		{% endfor %}
+	</section>
+    <h2 class="hoyster_title">Moules
+			<span>au Kilo</span>
+		</h2>
+        <section class="hoyster">
+		{% for mussleProduct in mussleProducts %}
+			<article>
+				<div>
+					<img src="/assets/images/{{mussleProduct.image}}" alt="{{mussleProduct.name}}">
+					<h3>{{mussleProduct.name}}</h3>
+				</div>
+				<p>
+					{{mussleProduct.description }}
+				</p>
+
+			</article>
+		{% endfor %}
+	</section>
 	<form>
         <div>
           <label for="nom">Nom:</label>
