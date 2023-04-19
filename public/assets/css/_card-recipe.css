@@ -1,40 +1,24 @@
 section.recipes-container {
     display: grid;
-    gap: calc(var(--spacing) *5);
-}
-
-section.recipes-container>article a {
-    margin-top: auto;
-
+    gap: calc(var(--spacing) * 5);
 }
 
 section.recipes-container>article {
     padding: 1rem;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    position: relative;
+    margin: 1rem 0;
     min-width: 300px;
-
 }
 
-
-
-section.recipes-container>article>h2 {
-    text-align: center;
-    color: black;
-}
-
+section.recipes-container>article>h2,
 section.recipes-container>article h3 {
     color: black;
+    text-align: center;
 }
 
-
-@media screen and (min-width: 768px) {
-    section.recipes-container {
-        grid-template-columns: 1fr 1fr;
-    }
+section.recipes-container>article a {
+    margin-top: auto;
 }
 
 .content-container {
@@ -46,14 +30,8 @@ section.recipes-container>article h3 {
     display: flex;
     flex-direction: column;
     flex: 1;
-    gap: 0.5rem;
-    padding: 0.5rem;
-
-}
-
-.image-content {
-    object-fit: cover;
-
+    gap: var(--spacing);
+    padding: var(--spacing);
 }
 
 .image-content img {
@@ -64,20 +42,12 @@ section.recipes-container>article h3 {
 }
 
 .text-content ul li {
-    padding-bottom: 0.5rem;
+    padding-bottom: var(--spacing);
 }
 
-
-/* Article 1 */
-
-section.recipes-container>article:nth-child(1) .content-container {
+section.recipes-container>article:nth-child(1) .content-container,
+section.recipes-container>article:nth-child(3) .content-container {
     flex-direction: row-reverse;
-}
-
-/* Article 2 */
-
-section.recipes-container>article:nth-child(2) .content-container {
-    flex-direction: row;
 }
 
 section.recipes-container>article:nth-child(2) {
@@ -88,11 +58,12 @@ section.recipes-container>article:nth-child(2)>h2 {
     color: var(--primary-inverse)
 }
 
-section.recipes-container>article:nth-child(2) .text-content h3 {
+section.recipes-container>article:nth-child(2) .text-content h3,
+section.recipes-container>article:nth-child(2) .text-content ul li {
     color: white;
 }
 
-section.recipes-container>article:nth-child(2) .text-content ul li {
+section.recipes-container>article:nth-child(2) .back-content ul li {
     color: white;
 }
 
@@ -101,19 +72,10 @@ section.recipes-container>article:nth-child(2) a {
     color: black;
 }
 
-/* Article 3 */
-section.recipes-container>article:nth-child(3) .content-container {
-    flex-direction: row-reverse;
-}
+
 
 section.recipes-container>article:nth-child(3) {
     background-color: var(--primary-inverse);
-}
-
-/* Article 4 */
-
-section.recipes-container>article:nth-child(4) .content-container {
-    flex-direction: row;
 }
 
 section.recipes-container>article:nth-child(4) a {
@@ -122,12 +84,7 @@ section.recipes-container>article:nth-child(4) a {
     border: none;
 }
 
-
-
-/* Face arrière de l'article */
-
 .back-content {
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -135,8 +92,11 @@ section.recipes-container>article:nth-child(4) a {
     bottom: 0;
     z-index: 1;
     overflow-y: auto;
+    display: none;
+}
 
-
+.article-flipped .text-content, .article-flipped .image-content {
+    visibility: hidden;
 }
 
 .article-flipped .back-content {
@@ -146,18 +106,7 @@ section.recipes-container>article:nth-child(4) a {
     align-items: center;
     padding: 1rem;
     box-sizing: border-box;
-}
-
-.article-flipped .text-content, .article-flipped .image-content {
-    visibility: hidden;
-}
-
-.article-flipped .back-content {
     visibility: visible;
-}
-
-section.recipes-container>article:nth-child(2) .back-content ul li {
-    color: white;
 }
 
 .no-point {
@@ -165,10 +114,8 @@ section.recipes-container>article:nth-child(2) .back-content ul li {
 }
 
 .back-content ul li {
-    margin-bottom: calc(var(--spacing) *3)
+    margin-bottom: calc(var(--spacing) * 3)
 }
-
-
 
 a[role="button"] {
     display: inline-block;
@@ -180,11 +127,16 @@ a[role="button"] {
     border: none;
     transition: background-color 0.3s ease, color 0.3s ease;
     outline: none;
-
 }
 
 a[role="button"]:hover,
 a[role="button"]:focus {
     background-color: var(--primary);
     color: var(--primary-inverse);
+}
+
+@media screen and (min-width: 768px) {
+    section.recipes-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
