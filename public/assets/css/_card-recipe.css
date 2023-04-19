@@ -118,3 +118,8 @@ section.recipes-container>article:nth-child(4) a {
     color: black;
     border: none;
 }
+
+a:hover {
+    background-color: var(--primary);
+    color: var(--primary-inverse);
+}
