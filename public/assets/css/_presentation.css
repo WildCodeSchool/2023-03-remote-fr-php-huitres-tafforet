@@ -1,0 +1,45 @@
+.presentation-entreprise{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    background-color: var(--primary);
+    margin-top: var(--block-spacing-vertical);
+    padding: .5rem;
+    place-items: center;
+    border-radius: 20px;
+}
+.presentation-paragraphe p {
+    font-size: 16px;
+    margin-top: 1rem;
+    color: var(--primary-inverse);
+    line-height: 3ch;
+}
+
+.ouvrier {
+    width: auto;
+}
+
+.bouton-envie-de-commander {
+    width: 25rem;
+    background-color: var(--primary-inverse);
+    border: none;
+    cursor: pointer;
+    margin: auto;
+}
+
+.bouton-envie-de-commander h2 {
+    margin: 0;
+}
+
+.icone-clic {
+    width: 3rem;
+}
+
+@media screen and (min-width: 300px) and (max-width: 1000px) {
+    .presentation-entreprise {
+        display: block;
+    }
+    .ouvrier {
+        padding: 1rem;
+    }
+}
