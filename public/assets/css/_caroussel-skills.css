@@ -1,0 +1,19 @@
+
+swiper-container {
+    width: 100%;
+    height: 18rem;
+}
+
+swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mySwiper {
+    --swiper-pagination-color : var(--primary);
+    --swiper-pagination-bullet-size: 0.7rem;
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-inactive-color:var(--primary-inverse);
+}

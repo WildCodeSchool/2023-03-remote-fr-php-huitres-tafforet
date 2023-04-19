@@ -1,0 +1,45 @@
+
+
+@media screen and (min-width: 768px) {
+.hoyster{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+section.hoyster{
+    display:grid;
+    gap :calc(var(--spacing)*10);
+    row-gap: 0rem;
+}
+section.hoyster>article{
+    border-radius: calc(var(--border-radius)*2);
+    background-color: var(--card-clear-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: var(--spacing);
+}
+section.hoyster>article>div>h3,
+section.hoyster>article>p:last-child{
+    margin-top: 1rem;
+    text-align: center;
+}
+.hoyster_title {
+    background-color: var(--card-dark-color);
+    width: fit-content;
+    margin-top:calc(var(--spacing)*8);
+    border-radius: calc(var(--border-radius)*2);
+}
+.hoyster_title {
+    padding: 1rem;
+    color: var(--card-dark-title-color)
+}
+
+.hoyster_title  span {
+    font-size: 0.65rem;
+}
+section.hoyster>article>div>img{
+    border-radius: calc(var(--border-radius)*2);
+}
+
+
+
