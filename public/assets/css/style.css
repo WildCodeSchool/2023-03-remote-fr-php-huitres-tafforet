@@ -13,9 +13,8 @@
 @import '_global.css';
 @import '_labels-skills.css';
 @import '_product_form.css';
+@import 'us_1.3/accueil-ouvrier';
 @import '_recipe-title.css';
 @import '_presentation.css';
-
-
-
+@import '_page_recipe.css';
 
