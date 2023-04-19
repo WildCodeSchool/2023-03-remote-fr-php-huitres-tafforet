@@ -21,10 +21,13 @@ class RecipeController extends AbstractController
                 </ul>',
                 'back_content' => '<ul>
                 <li class="no-point">Préparation : 30min | Cuisson : 20min</li>
-                <li>Laver puis éplucher les poivrons, les émincer et les faire revenir doucement dans une casserole avec un filet d\'huile d\'olive.
+                <li>Laver puis éplucher les poivrons, les émincer et les faire revenir doucement
+                 dans une casserole avec un filet d\'huile d\'olive.
                  Faire revenir à feux doux dans une poêle la poitrine fumée.</li>
-                <li>Juste avant de servir sortir les tranches de poitrine fumée et les laisser reposer sur un papier absorbant. Couper la tranche en morceaux carrés.</li>
-                <li>Prenez vos huîtres Marennes Oléron, décrochez juste le petit muscle et laisser les en coquille. Au moment de servir vider l\'eau de l\'huitre Marennes Oléron.
+                <li>Juste avant de servir sortir les tranches de poitrine fumée et les laisser reposer
+                 sur un papier absorbant. Couper la tranche en morceaux carrés.</li>
+                <li>Prenez vos huîtres Marennes Oléron, décrochez juste le petit muscle et laisser les
+                 en coquille. Au moment de servir vider l\'eau de l\'huitre Marennes Oléron.
                 Ajouter le poivron confit et les carrés de poitrine fumée encore tiède.</li>
                 </ul>'
             ],
@@ -37,10 +40,14 @@ class RecipeController extends AbstractController
                 </ul>',
                 'back_content' => '<ul>
                 <li class="no-point">Préparation : 15min | Cuisson : 5min</li>
-                <li>Posez les moules sur une planche en bois. La fente d\'ouverture des moules doit être mis côté planche (important pour la cuisson).</li>
-                <li>Posez les planches dehors, dans un endroit sécurisé et couvrez-les d’une bonne couche d’aiguilles de pin séchées (au moins 10 cm).</li>
-                <li>Mettez le feu aux aiguillettes de pin pour faire cuire les moules. La cuisson dure environ 5 min. Les coquilles doivent être noires ou blanches
-                (si elles sont marrons elles manquent de cuisson et on peut couvrir à nouveau d’aiguilles de pin et remettre le feu).</li>
+                <li>Posez les moules sur une planche en bois. La fente d\'ouverture des
+                 moules doit être mis côté planche (important pour la cuisson).</li>
+                <li>Posez les planches dehors, dans un endroit sécurisé et couvrez-les d’une bonne
+                 couche d’aiguilles de pin séchées (au moins 10 cm).</li>
+                <li>Mettez le feu aux aiguillettes de pin pour faire cuire les moules.
+                 La cuisson dure environ 5 min. Les coquilles doivent être noires ou blanches
+                (si elles sont marrons elles manquent de cuisson et on peut couvrir à nouveau
+                 d’aiguilles de pin et remettre le feu).</li>
                 <li>Retirez la braise et dégustez les moules avec un bon vin blanc de pays charentais.</li>
                 </ul>'
             ],
