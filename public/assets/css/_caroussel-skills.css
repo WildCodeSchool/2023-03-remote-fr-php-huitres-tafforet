@@ -12,8 +12,8 @@ swiper-slide img {
 }
 
 .mySwiper {
-    --swiper-pagination-color : #1D334A;
+    --swiper-pagination-color : var(--primary);
     --swiper-pagination-bullet-size: 0.7rem;
     --swiper-pagination-bullet-inactive-opacity: 1;
-    --swiper-pagination-bullet-inactive-color:#D9D9D9;
+    --swiper-pagination-bullet-inactive-color:var(--primary-inverse);
 }
