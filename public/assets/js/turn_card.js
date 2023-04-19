@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Mettre à jour le texte du bouton
             if (articles[index].classList.contains('article-flipped')) {
-                button.textContent = 'Ingrédients';
+                button.textContent = 'Ingrédients : clique ici';
             } else {
                 button.textContent = 'Préparation : clique ici';
             }
