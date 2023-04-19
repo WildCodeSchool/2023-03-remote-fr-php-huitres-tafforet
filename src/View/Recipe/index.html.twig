@@ -27,8 +27,11 @@
 						{% if recipe.image2 is not null %}
 							<img src="/assets/images/{{recipe.image2}}" alt="{{recipe.name}}">
 						{% endif %}
-
 					</div>
+					<div class='back-content'>
+						{{ recipe.back_content|raw }}
+					</div>
+
 
 				</div>
 
@@ -61,4 +64,5 @@
 			</ul>
 		</div>
 	</section>
+	<script src="/assets/js/turn_card.js"></script>
 {% endblock %}
