@@ -1,5 +1,6 @@
 {% extends 'layout.html.twig' %}
 
+
 {% block title %}Produits
 {% endblock %}
 
@@ -60,11 +61,54 @@
 			</tr>
 		</tbody>
 	</table>
+
+
+<h2 class="hoyster_title">Huitres
+			<span>à la douzaine</span>
+		</h2>
+
+<section class="hoyster">
+		{% for hoysterProduct in hoysterProducts %}
+			<article>
+				<div>
+					<img src="/assets/images/{{hoysterProduct.image}}" alt="{{wilder.name}}">
+					<h3>{{hoysterProduct.name}}</h3>
+				</div>
+				<p>
+					{{hoysterProduct.description }}
+				</p>
+
+                <div> {{hoysterProduct.maturing|raw }}</div>
+			</article>
+		{% endfor %}
+	</section>
+    <h2 class="hoyster_title">Moules
+			<span>au Kilo</span>
+		</h2>
+        <section class="hoyster">
+		{% for mussleProduct in mussleProducts %}
+			<article>
+				<div>
+					<img src="/assets/images/{{mussleProduct.image}}" alt="{{mussleProduct.name}}">
+					<h3>{{mussleProduct.name}}</h3>
+				</div>
+				<p>
+					{{mussleProduct.description }}
+				</p>
+
+			</article>
+		{% endfor %}
+	</section>
+
+</section>
+
+
 	 <h2 class=titre-form>Envie de commander ?</h2>
     <form action="/success" method="post">
         <div class="form-grid">
-            <div class="questions-grid">	
+            <div class="questions-grid">
 			<p>Veuillez remplir ce formulaire pour toute demande de devis. </p>
+
                 <label for="lastname">Nom*</label>
                 <input type="text" id="lastname" name="lastname" required>
             
@@ -86,6 +130,7 @@
                 <img class="form-image" src="/assets/images/image-form.jpg" alt="le port">
 
             </div>
+
         </div>
 
         <fieldset class="choix-section">
@@ -116,3 +161,4 @@
         <button class="demande-devis-button" type="submit">Demander un devis</button>
     </form>
 {% endblock %}
+
