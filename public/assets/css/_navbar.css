@@ -10,7 +10,7 @@ nav {
   }
 
   .logo a {
-    max-width: 6rem;
+    max-width: 8rem;
 
   }
 
@@ -135,5 +135,11 @@ nav {
       }
       .dropdown-menu li a {
         padding-left: 1rem;
+      }
+    }
+
+    @media screen and (min-width: 768px) and (max-width:900px) {
+      .menu {
+        gap: 2rem;
       }
     }
