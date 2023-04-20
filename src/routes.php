@@ -12,6 +12,7 @@ return [
     'skills' => ['SkillsController', 'index'],
     'recipe' => ['RecipeController', 'index'],
     'product' => ['ProductController', 'index'],
+    'advice' => ['AdviceController', 'index',],
     'success' => ['FormController', 'add'],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
