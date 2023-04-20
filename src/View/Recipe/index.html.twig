@@ -16,16 +16,16 @@
 	<section class="recipes-container">
 		{% for recipe in recipes %}
 			<article id="article-{{ loop.index }}">
-				<h2>{{recipe.name}}</h2>
+				<h2>{{ recipe.name }}</h2>
 				<div class="content-container">
 					<div class="text-content">
 						<h3>Ingrédients
 						</h3>
-						{{recipe.content|raw }}</div>
+						{{ recipe.content|raw }}</div>
 					<div class="image-content">
-						<img src="/assets/images/{{recipe.image1}}" alt="{{recipe.name}}">
+						<img src="/assets/images/{{ recipe.image1 }}" alt="{{ recipe.name }}">
 						{% if recipe.image2 is not null %}
-							<img src="/assets/images/{{recipe.image2}}" alt="{{recipe.name}}">
+							<img src="/assets/images/{{ recipe.image2 }}" alt="{{ recipe.name }}">
 						{% endif %}
 					</div>
 					<div class='back-content'>
