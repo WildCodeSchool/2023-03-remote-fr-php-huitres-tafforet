@@ -15,7 +15,7 @@
 	</div>
 	<section class="recipes-container">
 		{% for recipe in recipes %}
-			<article>
+			<article id="article-{{ loop.index }}">
 				<h2>{{recipe.name}}</h2>
 				<div class="content-container">
 					<div class="text-content">
@@ -27,12 +27,15 @@
 						{% if recipe.image2 is not null %}
 							<img src="/assets/images/{{recipe.image2}}" alt="{{recipe.name}}">
 						{% endif %}
-
 					</div>
+					<div class='back-content'>
+						{{ recipe.back_content|raw }}
+					</div>
+
 
 				</div>
 
-				<a href="#" role="button">Préparation : clique ici</a>
+				<a href="#article-{{ loop.index }}" role="button">Préparation : clique ici</a>
 
 
 			</article>
@@ -61,4 +64,5 @@
 			</ul>
 		</div>
 	</section>
+	<script src="/assets/js/turn_card.js"></script>
 {% endblock %}
