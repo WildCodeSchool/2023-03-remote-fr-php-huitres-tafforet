@@ -1,26 +1,6 @@
-.container-meteo {
-    background-color: #2980B9;
-    background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
-    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);
-    width: 100%;
-    border-radius: 10px;
-
+.section-meteo{
+    width: 10rem;
+    position: fixed;
+    top: 8.125rem;
+    right: 7rem;
 }
-col-md-8{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-}
-.text-center meteo-5 {
-  margin-bottom: 0;
-}
-#ville-meteo, #temperature {
-    text-transform: capitalize;
-    margin-top: 0;
-  }
-  
-  #temperature {
-    font-size: 4em;
-  }
-  text-center-meteo span {
-    font-size: 1rem;
-  }
