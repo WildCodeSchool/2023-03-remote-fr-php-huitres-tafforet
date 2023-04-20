@@ -81,7 +81,7 @@
     margin : 0rem 0rem;
 }
 .savoirfaire>div{
-    background-color: #1D334A;
+    background-color: var(--primary);
     padding:1.5rem;
     border-radius: calc(var(--border-radius)*2);
 }
@@ -92,13 +92,13 @@
 
 
 .savoirfaire h2{
-    background-color: #0E1C26;
+    background-color: var(--card-dark-color);
     width: fit-content;
     margin:2rem auto;
     border-radius: calc(var(--border-radius)*2);
-    color: #C9C081;
+    color: var(--card-dark-title-color);
     padding: 1rem 5rem;
-    
+
 }
 .savoirfaire p{
     margin:1rem  3rem;
