@@ -9,7 +9,7 @@
     border-radius: 20px;
 }
 .presentation-paragraphe p {
-    font-size: 16px;
+    font-size: 0.85rem;
     margin-top: 1rem;
     color: var(--primary-inverse);
     line-height: 2;
@@ -20,12 +20,12 @@
 }
 
 .bouton-envie-de-commander {
-font-size: 1.5rem;
 text-align: center;
 }
 
 .bouton-envie-de-commander a {
     background-color: var(--primary-inverse);
+    font-size: 1.5rem;
     color: var(--primary);
 }
 
