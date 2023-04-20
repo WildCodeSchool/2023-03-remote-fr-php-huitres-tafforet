@@ -20,16 +20,17 @@
 }
 
 .bouton-envie-de-commander {
-    width: 25rem;
+    width: 22rem;
     background-color: var(--primary-inverse);
     border: none;
     cursor: pointer;
+    display: block;
     margin: auto;
+    color: var(--primary);
+    font-size: 1.5rem;
 }
 
-.bouton-envie-de-commander h2 {
-    margin: 0;
-}
+
 
 .icone-clic {
     width: 3rem;
