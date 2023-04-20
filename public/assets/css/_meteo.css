@@ -1,6 +1,5 @@
-.section-meteo{
-    width: 10rem;
-    position: fixed;
-    top: 8.125rem;
-    right: 7rem;
+@media only screen and (max-width:768px) {
+    #ww_74bb7a75e5c2a {
+        display: none;
+    }
 }
