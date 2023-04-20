@@ -11,6 +11,7 @@ class ItemController extends AbstractController
      */
     public function index(): string
     {
+    
         $itemManager = new ItemManager();
         $items = $itemManager->selectAll('title');
 

@@ -61,24 +61,24 @@
 			</tr>
 		</tbody>
 	</table>
-
+{{ dump(product) }}
 
 <h2 class="hoyster_title">Huitres
 			<span>à la douzaine</span>
 		</h2>
 
 <section class="hoyster">
-		{% for hoysterProduct in hoysterProducts %}
-			<article>
+		{% for product in products %}
+			<article><p>{{product.type}}</p>
 				<div>
-					<img src="/assets/images/{{hoysterProduct.image}}" alt="{{wilder.name}}">
-					<h3>{{hoysterProduct.name}}</h3>
+					<img src="/assets/images/huitre1.png" alt="">
+					<h3>{{product.name}}</h3>
 				</div>
 				<p>
-					{{hoysterProduct.description }}
+					{{product.description }}
 				</p>
 
-                <div> {{hoysterProduct.maturing|raw }}</div>
+                <div> {{product.information|raw }}</div>
 			</article>
 		{% endfor %}
 	</section>
