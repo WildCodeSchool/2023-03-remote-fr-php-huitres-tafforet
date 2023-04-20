@@ -1,0 +1,123 @@
+.titre-form {
+	text-align: center;
+    color: var(--primary);
+}
+
+form {
+	padding: 1.25rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+    width: 100%;
+}
+form p {
+    text-align: center;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    place-items: center;
+}
+
+.question-classique {
+    width: 40%;
+}
+
+.form-image {
+    width: auto;
+    border-radius: 8px;
+}
+
+label {
+	display: inline-block;
+	text-align: right;
+	margin-right: 0.625rem;
+}
+
+input[type="text"], input[type="email"], input[type="number"], textarea {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+fieldset {
+	margin: 0.625rem 0;
+	padding: 0.625rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+}
+
+legend {
+	font-weight: bold;
+}
+
+.choix {
+    display: block;
+}
+
+.choix label {
+    text-align: center;
+}
+
+.choix-section {
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+textarea {
+    resize:none;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.625rem;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--primary);
+    border: none;
+}
+
+.livraison {
+    display: block;
+    margin: auto;
+}
+
+.demande-devis-button {
+    background-color: var(--primary-inverse);
+    border: none;
+    color:var(--primary);
+	padding: 0.625rem 1.25rem;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 15rem;
+}
+
+button[type="submit"]:hover {
+	background-color: var(--primary);
+    color: var(--primary-inverse);
+}
+
+.livraison {
+    margin-bottom: 1rem;
+}
+
+/*RESPONSIVE*/
+
+
+@media only screen and (max-width: 768px) {
+    .form-grid {
+        display: block;
+    }
+    .form-image {
+        display: none;
+    }
+    .choix {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
