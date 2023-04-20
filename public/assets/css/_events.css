@@ -1,7 +1,7 @@
 .events {
     display: grid;
-    grid-template-columns: 49% 49%;
-    margin: 2.5rem;
+    grid-template-columns:  1fr 2fr;
+    margin-top: 2.5rem;
     gap: 3rem;
     padding: 2rem;
     justify-content: center;
@@ -12,14 +12,15 @@
     flex-direction: column;
 }
 
-.imageEvent img {
+.imageEvent img{
     min-height: 15rem;
     display: block;
     border: 1px solid white;
     border-radius: 20px;
-    margin-top: 1rem;
     object-fit: cover;
+    margin-bottom: 1rem;
 }
+
 
 .eventDay {
     margin-bottom: 0;
@@ -27,20 +28,16 @@
     border-radius: 20px;
     box-shadow: 20px 20px 1px var(--primary), -20px -20px 1px var(--primary);
 }
-.eventDay ul,
-h3,
-h5 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 .eventDay ul{
+    display: flex;
+    margin-left: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.eventDay ul {
     padding: 0 var(--spacing);
 }
-.eventDay ul li {
-    list-style: none;
-}
+
 .eventDay li {
     font-size: 16px;
     font-family: var(--font-family);
@@ -54,9 +51,23 @@ h5 {
     color: black;
     margin-bottom: 0;
     margin-top: 0;
+    text-align: center;
 }
 
-@media screen and (min-width: 300px) and (max-width: 1000px) {
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+    .events {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin: 2.5rem;
+        gap: 3rem;
+        padding: 2rem;
+        justify-content: center;
+    }
+    .map-responsive iframe {
+        max-width: 20rem;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 1000px) {
     .events {
         display: flex;
         flex-direction: column-reverse;
@@ -64,6 +75,47 @@ h5 {
         justify-content: center;
         margin: 0.5rem;
     }
+    .map-responsive iframe {
+        max-width: 42rem;
+        max-height: 15rem;
+    }
 }
-
-
+@media screen and (min-width: 500px) and (max-width: 600px) {
+    .events {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        margin: 0.5rem;
+    }
+    .map-responsive iframe {
+        max-width: 30rem;
+        max-height: 15rem;
+    }
+}
+@media screen and (min-width: 400px) and (max-width: 500px) {
+    .events {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        margin: 0.5rem;
+    }
+    .map-responsive iframe {
+        max-width: 25rem;
+        max-height: 15rem;
+    }
+}
+@media screen and (min-width: 200px) and (max-width: 400px) {
+    .events {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+    }
+    .map-responsive iframe {
+        max-width: 20rem;
+        max-height: 15rem;
+    }
+}
