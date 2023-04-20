@@ -95,11 +95,13 @@ section.recipes-container>article:nth-child(4) a {
     display: none;
 }
 
-.article-flipped .text-content, .article-flipped .image-content {
+.article-flipped .text-content, .article-flipped .image-content,
+:target .text-content, :target .image-content {
     visibility: hidden;
 }
 
-.article-flipped .back-content {
+.article-flipped .back-content,
+:target .back-content {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -109,7 +111,7 @@ section.recipes-container>article:nth-child(4) a {
     visibility: visible;
 }
 
-.no-point {
+.back-content ul li:first-child {
     list-style-type: none;
 }
 

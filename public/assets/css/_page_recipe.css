@@ -15,7 +15,7 @@ img {
 
 h3>img {
     margin-block: -2.813rem;
-    margin-left: -7.938rem;
+    margin-left: -12.938rem;
     width: calc(var(--spacing) *5);
 }
 
@@ -35,7 +35,7 @@ h3>img {
 
     h3>img {
         margin: -1.875rem auto -2.5rem;
-        margin-right: -2.25rem;
+        margin-right: -0.25rem;
     }
 }
 
@@ -46,6 +46,6 @@ h3>img {
 
     h3>img {
         margin: -2.875rem auto -3.5rem;
-        margin-right: 1rem;
+        margin-right: 3rem;
     }
 }

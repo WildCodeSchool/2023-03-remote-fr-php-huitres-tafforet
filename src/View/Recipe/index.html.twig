@@ -15,7 +15,7 @@
 	</div>
 	<section class="recipes-container">
 		{% for recipe in recipes %}
-			<article>
+			<article id="article-{{ loop.index }}">
 				<h2>{{recipe.name}}</h2>
 				<div class="content-container">
 					<div class="text-content">
@@ -35,7 +35,7 @@
 
 				</div>
 
-				<a href="#" role="button">Préparation : clique ici</a>
+				<a href="#article-{{ loop.index }}" role="button">Préparation : clique ici</a>
 
 
 			</article>
