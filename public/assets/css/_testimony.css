@@ -1,0 +1,40 @@
+.testimony-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimony-title h2 {
+    border: 1px solid black;
+    align-self: center;
+    margin: 2rem;
+    padding: 2rem;
+    color: var(--primary-inverse);
+    background-color: var(--card-dark-color);
+    border-radius: 11px;
+    font-family: var(--font-family-secondary);
+    font-size: 2rem;
+}
+
+.testimony-grid {
+    display: grid;
+    grid-template-columns: 0.25fr 0.25fr 0.25fr;
+    justify-content: space-between;
+}
+.testimonies {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 4rem;
+}
+
+@media screen and (max-width: 600px) {
+    .testimony-grid {
+        display: grid;
+        grid-template-columns: 0.5fr;
+        justify-content: center;
+        align-content: center;
+    }
+}
+
