@@ -156,13 +156,13 @@ CREATE TABLE `EVENT`(`ID`
 	VALUES (
 	        'huitre',
 	        'Fine de Claires',
-	        'Les huîtres de type fine de claire sont cultivées dans des bassins
+	        'Les huîtres de type fines de claire sont cultivées dans des bassins
 					        d\'eau salée appelés claires. Elles peuvent être de couleur
 					        blanche ou verte et sont affinées hors de la mer pendant un à deux mois,
 					        avec un maximum de 20 coquillages par mètre carré. La chair de la fine de claire
 					        est plus ferme que celle
 					        des huîtres de parc et a un léger goût de noisette. Bien que leur teneur en chair
-					        soit la même que celle des huîtres de parc, les fine de claire ont une forme arrondie et bombée.',
+					        soit la même que celle des huîtres de parc, les fines de claire ont une forme arrondie et bombée.',
 	        'Du 1/04 au 31/10 : 14 jours <br> Du 1/11 au 31/03 : 28 jours'
 	    ), (
 	        'huitre',
@@ -179,7 +179,7 @@ CREATE TABLE `EVENT`(`ID`
 	        'Du 1/04 au 31/10 : 14 jours<br> Du 1/11 au 31/03 : 28 jours'
 	    ), (
 	        'huitre',
-	        'Pousse en Clair',
+	        'Pousse en Claires',
 	        'La variété d\'huîtres nommée fine de claire verte Label Rouge
 				                est connue pour sa texture peu charnue et sa forme homogène. Les branchies
 				                de ces huîtres sont d\'une teinte verte appréciée des consommateurs, et leur
