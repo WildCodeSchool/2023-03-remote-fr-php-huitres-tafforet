@@ -16,4 +16,7 @@ swiper-slide img {
     --swiper-pagination-bullet-size: 0.7rem;
     --swiper-pagination-bullet-inactive-opacity: 1;
     --swiper-pagination-bullet-inactive-color:var(--primary-inverse);
+    margin-bottom: 1rem;
 }
+
+
