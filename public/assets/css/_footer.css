@@ -8,8 +8,12 @@
     padding: 1.2rem;
 }
 
-.label>img {
+.info>span {
     padding-left: 1rem;
+}
+
+.label>img {
+    padding-left: 0.8rem;
 }
 
 .label>img, .logo_facebook>a>img {
@@ -32,7 +36,13 @@
     .footer {
         display: flex;
         flex-direction: column;
-        align-items: center;
+    }
+
+    .info>span {
+        display: flex;
+        align-self: center;
+        padding: 0;
+
     }
 
     .footer>div {
@@ -50,7 +60,19 @@
         max-height: 1.5rem;
     }
 
-    .footer>div {
-        padding-left: 0.4rem;
+
+    .label {
+        margin-right: 2.3rem;
+        margin-left: 2rem;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .label>img {
+        padding-left: 0.5rem;
+    }
+
+    .info>span {
+
     }
 }
