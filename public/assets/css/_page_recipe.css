@@ -1,4 +1,4 @@
-.TitleRecipe {
+.title-recipe {
     text-align: center;
 }
 
@@ -14,12 +14,11 @@ img {
 
 
 h3>img {
-    margin-block: -2.813rem;
-    margin-left: -12.938rem;
+    margin-left: -0.062rem;
     width: calc(var(--spacing) *5);
 }
 
-.recette {
+.recette-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -45,7 +44,7 @@ h3>img {
     }
 
     h3>img {
-        margin: -2.875rem auto -3.5rem;
-        margin-right: 3rem;
+        margin: -1.875rem auto -3.5rem;
+
     }
 }
