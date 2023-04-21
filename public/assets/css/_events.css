@@ -2,8 +2,8 @@
     display: grid;
     grid-template-columns:  1fr 2fr;
     margin-top: 2.5rem;
+    padding-top: 2rem;
     gap: 3rem;
-    padding: 2rem;
     justify-content: center;
 }
 
@@ -20,7 +20,9 @@
     object-fit: cover;
     margin-bottom: 1rem;
 }
-
+.map-responsive iframe {
+    max-width: 26rem;
+}
 
 .eventDay {
     margin-bottom: 0;
@@ -39,7 +41,7 @@
 }
 
 .eventDay li {
-    font-size: 16px;
+    font-size: var(--font-size);
     font-family: var(--font-family);
     color: black;
     line-height: 2rem;
@@ -47,7 +49,7 @@
 .eventDay h3 {
     font-family: var(--font-family-secondary);
     padding: 1rem;
-    font-size: 24px;
+    font-size: var(--font-size);
     color: black;
     margin-bottom: 0;
     margin-top: 0;
@@ -64,7 +66,7 @@
         justify-content: center;
     }
     .map-responsive iframe {
-        max-width: 20rem;
+        max-width: 24rem;
     }
 }
 @media screen and (min-width: 600px) and (max-width: 1000px) {
