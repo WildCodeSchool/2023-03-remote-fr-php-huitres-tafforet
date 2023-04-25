@@ -28,9 +28,9 @@ ENGINE = InnoDB;
 -- Table `event`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `event` (
-  `idevent` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `text` TEXT NULL,
-  PRIMARY KEY (`idevent`))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
@@ -38,11 +38,11 @@ ENGINE = InnoDB;
 -- Table `recipe`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `recipe` (
-  `idrecipe` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL,
   `content` TEXT NULL,
   `back_content` TEXT NULL,
-  PRIMARY KEY (`idrecipe`))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
