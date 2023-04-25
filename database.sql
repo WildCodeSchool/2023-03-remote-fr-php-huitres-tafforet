@@ -96,6 +96,13 @@ CREATE TABLE IF NOT EXISTS `devis_product` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `wine` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `type` VARCHAR(255) NULL,
+  `name` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
 USE tafforet;
 
 	INSERT INTO `event` (`text`)
@@ -271,3 +278,20 @@ INSERT INTO
   Ajouter en nappage le mélange cacahuète, miel et sauce soja.</li>
   </ul>'
 );
+
+INSERT INTO wine (type, name)
+VALUES
+    (
+      'Vins blancs secs et fruités',
+    '<ul><li>Muscadet</li>
+    <li>Pouilly fumé</li>
+    <li>Sancerre</li>
+    </ul>'
+    ),
+    (
+      'Vin rouge',
+      '<ul><li>Atlantique rouge</li>
+      <li>Bordeaux rouge</li>
+      <li>Bordeaux un brulhois rouge</li></ul>'
+      );
+

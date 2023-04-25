@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\RecipeManager;
+use App\Model\WineManager;
 
 class RecipeController extends AbstractController
 {
@@ -10,8 +11,13 @@ class RecipeController extends AbstractController
     {
         $recipesManager = new RecipeManager();
         $recipes = $recipesManager->selectAll();
+
+        $wineManager = new WineManager();
+        $wines = $wineManager->selectAll();
+
         return $this->twig->render('Recipe/index.html.twig', [
-            'recipes' => $recipes
+            'recipes' => $recipes,
+            'wines' => $wines,
         ]);
     }
 }

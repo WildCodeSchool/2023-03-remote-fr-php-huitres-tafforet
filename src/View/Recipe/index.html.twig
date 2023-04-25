@@ -46,22 +46,14 @@
 				<img src="/assets/images/vin.png" alt="Verre de vin">
 			</h3>
 		</div>
-
 		<div class="list-vin">
-			<h4>Vins blancs secs et fruités :</h4>
-			<ul>
+			{% for wine in wines %}
 
-				<li>Muscadet</li>
-				<li>Pouilly fumé</li>
-				<li>Sancerre</li>
-			</ul>
-			<h4>Vin rouge :</h4>
-			<ul>
+				<h4>{{ wine.type }}
+					:</h4>
+				{{ wine.name|raw }}
 
-				<li>Atlantique rouge</li>
-				<li>Bordeaux rouge</li>
-				<li>Bordeaux un brulhois rouge</li>
-			</ul>
+			{% endfor %}
 		</div>
 	</section>
 	<script src="/assets/js/turn_card.js"></script>
