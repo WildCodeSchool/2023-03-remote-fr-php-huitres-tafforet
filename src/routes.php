@@ -9,7 +9,7 @@
 return [
     'form' => ['FormController', 'add',],
     '' => ['HomeController', 'index',],
-    '' => ['EventController', 'index',],
+    'events' => ['EventController', 'index',],
     'skills' => ['SkillsController', 'index'],
     'recipe' => ['RecipeController', 'index'],
     'product' => ['ProductController', 'index'],
