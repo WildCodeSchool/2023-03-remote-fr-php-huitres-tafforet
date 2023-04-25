@@ -63,11 +63,11 @@
 	</table>
 
 
-<h2 class="hoyster_title">Huitres
-			<span>à la douzaine</span>
-		</h2>
+	<h2 class="hoyster_title">Huitres
+		<span>à la douzaine</span>
+	</h2>
 
-<section class="hoyster">
+	<section class="hoyster">
 		{% for hoysterProduct in hoysterProducts %}
 			<article>
 				<div>
@@ -78,14 +78,15 @@
 					{{hoysterProduct.description }}
 				</p>
 
-                <div> {{hoysterProduct.maturing|raw }}</div>
+				<div>
+					{{hoysterProduct.maturing|raw }}</div>
 			</article>
 		{% endfor %}
 	</section>
-    <h2 class="hoyster_title">Moules
-			<span>au Kilo</span>
-		</h2>
-        <section class="hoyster">
+	<h2 class="hoyster_title">Moules
+		<span>au Kilo</span>
+	</h2>
+	<section class="hoyster">
 		{% for mussleProduct in mussleProducts %}
 			<article>
 				<div>
@@ -103,62 +104,55 @@
 </section>
 
 
-	 <h2 class=titre-form>Envie de commander ?</h2>
-    <form action="/success" method="post">
-        <div class="form-grid">
-            <div class="questions-grid">
-			<p>Veuillez remplir ce formulaire pour toute demande de devis. </p>
+<h2 class="titre-form">Envie de commander ?</h2>
+<form action="/success" method="post">
+	<div class="form-grid">
+		<div class="questions-grid">
+			<p>Veuillez remplir ce formulaire pour toute demande de devis.
+			</p>
 
-                <label for="lastname">Nom*</label>
-                <input type="text" id="lastname" name="lastname" required>
-            
-            
-                <label for="firstname">Prénom*</label>
-                <input type="text" id="firstname" name="firstname" required>
-          
-           
-                <label for="address">Adresse*</label>
-                <input type="text" id="address" name="address" required>
-           
-                <label for="phone">Numéro de téléphone*</label>
-                <input type="tel" id="phone" name="phone" required>
-          
-                <label for="email">Email*</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <img class="form-image" src="/assets/images/image-form.jpg" alt="le port">
+			<label for="lastname">Nom*</label>
+			<input type="text" id="lastname" name="lastname" required>
 
-            </div>
 
-        </div>
+			<label for="firstname">Prénom*</label>
+			<input type="text" id="firstname" name="firstname" required>
 
-        <fieldset class="choix-section">
-            <legend>Choix des produits*</legend>
-            <div class="choix">
-                <label for="fines-de-claires"><input type="checkbox" id="fines-de-claires" name="choix-produits"
-                        value="fines-de-claires">Fines de claires</label>
-                <label for="speciales-de-claires"><input type="checkbox" id="speciales-de-claires"
-                        name="choix-produits" value="speciales-de-claires">Spéciales de claires</label>
-                <label for="label-rouge"><input type="checkbox" id="label-rouge" name="choix-produits"
-                        value="label-rouge">Label rouge</label>
-                <label for="pousses-en-claires"><input type="checkbox" id="pousses-en-claires" name="choix-produits"
-                        value="pousses-en-claires">Pousses en claires</label>
-                <label for="moules-de-bouchot"><input type="checkbox" id="moules-de-bouchot" name="choix-produits"
-                        value="moules-de-bouchot">Moules de Bouchot</label>
-                <label for="moules-d-irlande"><input type="checkbox" id="moules-d-irlande" name="choix-produits"
-                        value="moules-d-irlande">Moules d'Irlande</label>
-            </div>
-        </fieldset>
 
-        <label for="comment">Commentaires</label>
-        <textarea id="commentaires" name="comment" rows="5"></textarea>
-        <div class="livraison">
-            <input type="checkbox" id="livraison" name="delivery" value="oui">
-            <label for="livraison">Livraison (en supplément)</label>
-        </div>
+			<label for="address">Adresse*</label>
+			<input type="text" id="address" name="address" required>
 
-        <button class="demande-devis-button" type="submit">Demander un devis</button>
-    </form>
-{% endblock %}
+			<label for="phone">Numéro de téléphone*</label>
+			<input type="tel" id="phone" name="phone" required>
 
+			<label for="email">Email*</label>
+			<input type="email" id="email" name="email" required>
+		</div>
+		<div>
+			<img class="form-image" src="/assets/images/image-form.jpg" alt="le port">
+
+		</div>
+
+	</div>
+
+	<fieldset class="choix-section">
+		<legend>Choix des produits*</legend>
+		<div class="choix">
+			<label for="fines-de-claires"><input type="checkbox" id="fines-de-claires" name="choix-produits[]" value="1">Fines de claires</label>
+			<label for="speciales-de-claires"><input type="checkbox" id="speciales-de-claires" name="choix-produits[]" value="2">Spéciales de claires</label>
+			<label for="label-rouge"><input type="checkbox" id="label-rouge" name="choix-produits[]" value="4">Label rouge</label>
+			<label for="pousses-en-claires"><input type="checkbox" id="pousses-en-claires" name="choix-produits[]" value="3">Pousses en claires</label>
+			<label for="moules-de-bouchot"><input type="checkbox" id="moules-de-bouchot" name="choix-produits[]" value="5">Moules de Bouchot</label>
+			<label for="moules-d-irlande"><input type="checkbox" id="moules-d-irlande" name="choix-produits[]" value="6">Moules d'Irlande</label>
+		</div>
+	</fieldset>
+
+	<label for="comment">Commentaires</label>
+	<textarea id="commentaires" name="comment" rows="5"></textarea>
+	<div class="livraison">
+		<input type="checkbox" id="livraison" name="delivery" value="oui">
+		<label for="livraison">Livraison (en supplément)</label>
+	</div>
+
+	<button class="demande-devis-button" type="submit">Demander un devis</button>
+</form>{% endblock %}
