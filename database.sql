@@ -33,6 +33,14 @@ CREATE TABLE IF NOT EXISTS `event` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `testimonial`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testimonial` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `testimonial` TEXT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `recipe`
@@ -108,6 +116,18 @@ VALUES (
     );
 
 	INSERT INTO `category` (type) VALUES ('huître'), ('moule');
+
+    INSERT INTO `testimonial` (`testimonial`)
+VALUES (
+        '“Miam miam trop bonnes les huîtres”'
+    ), (
+        '“Huîtres fraîches et de qualités ! JFM.”'
+    ), (
+        '“J\'ai rarement goûté des huîtres aussi fraîches et savoureuses que celles-ci”'
+    );
+
+	INSERT INTO `category` (type) VALUES ('huître'), ('moule');
+
 
 INSERT INTO `product` (
 		`name`,
