@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\EventManager;
+
 class HomeController extends AbstractController
 {
     /**
@@ -9,6 +11,9 @@ class HomeController extends AbstractController
      */
     public function index(): string
     {
-        return $this->twig->render('Home/index.html.twig');
+        $eventManager = new EventManager();
+        return $this->twig->render('Home/index.html.twig', [
+            'events' => $eventManager->selectAll()
+                ]);
     }
 }

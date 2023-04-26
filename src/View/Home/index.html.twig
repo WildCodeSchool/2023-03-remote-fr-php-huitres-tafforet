@@ -49,9 +49,9 @@
 			<h3>Évènements</h3>
 
 			<ul>
-				<li>Marché de Rochefort tous les mardis.</li>
-				<li>Marché de Saujon tous les jeudis.</li>
-				<li>Dégustation et visite de l’entreprise le samedi matin sur réservation.</li>
+            {% for event in events %}
+                <li>{{ event.text }} </li>
+            {% endfor %}
 			</ul>
 
 			<h3>Horaires</h3>
