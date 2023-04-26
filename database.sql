@@ -42,6 +42,8 @@ CREATE TABLE IF NOT EXISTS `recipe` (
   `name` VARCHAR(255) NULL,
   `content` TEXT NULL,
   `back_content` TEXT NULL,
+  `image1` VARCHAR(155) NULL,
+  `image2` VARCHAR(155) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -200,7 +202,9 @@ INSERT INTO
         `recipe` (
             `name`,
             `content`,
-            `back_content`
+            `back_content`,
+            `image1`,
+            `image2`
         )
   VALUES (
   'Huîtres, poivron confit et lard',
@@ -220,7 +224,9 @@ INSERT INTO
   <li>Prenez vos huîtres Marennes Oléron, décrochez juste le petit muscle et laisser les
   en coquille. Au moment de servir vider l’eau de l’huitre Marennes Oléron.
   Ajouter le poivron confit et les carrés de poitrine fumée encore tiède.</li>
-  </ul>'
+  </ul>',
+  'pleindhuitre.png',
+  'huitrecitron.png'
 ), (
   'Eclade de moules',
   '<ul>
@@ -238,7 +244,9 @@ INSERT INTO
   (si elles sont marrons elles manquent de cuisson et on peut couvrir à nouveau
   d’aiguilles de pin et remettre le feu).</li>
   <li>Retirez la braise et dégustez les moules avec un bon vin blanc de pays charentais.</li>
-  </ul>'
+  </ul>',
+  'eclade.jpg',
+  NULL
 ), (
   'Huître, kiwi, gingembre
   et lait de coco',
@@ -257,7 +265,9 @@ INSERT INTO
   <li>Prenez vos huîtres Marennes Oléron, décrochez juste le petit muscle et laisser les en coquille.
   Au moment de servir vider l’eau de l’huitre.</li>
   <li>Ajouter les dés de kiwi et verser une cuillère à café d’infusion coco et gingembre par huître.</li>
-  </ul>'
+  </ul>',
+  'assietehuitre.jpg',
+  NULL
 ), (
   'Huître, cacahuète, miel
   et sauce soja',
@@ -276,7 +286,9 @@ INSERT INTO
   <li>Prenez vos huitres Marennes Oléron, décrochez juste le petit muscle et laisser les en coquille.
   Au moment de servir vider l’eau de l’huître Marennes Oléron.
   Ajouter en nappage le mélange cacahuète, miel et sauce soja.</li>
-  </ul>'
+  </ul>',
+  'huitrevin.png',
+  'cacahouete.jpg'
 );
 
 INSERT INTO wine (type, name)
