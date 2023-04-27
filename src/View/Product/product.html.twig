@@ -75,7 +75,7 @@
     {% if  product.category_id == 1 %}
 		<article>
 			<div>
-				<img src="/assets/images/huitre{{product.id}}.png" alt="huitre{{product.id}}">
+				<img src="/assets/images/{{product.name|replace({"’":"", " ":""})}}.png" alt="{{product.name}}">
 				<h3>{{product.name}}</h3>
 			</div>
 			<p>
@@ -98,7 +98,7 @@
     {% if  product.category_id == 2 %}
 			<article>
 				<div>
-					<img src="/assets/images/moule{{product.id}}.png" alt="moule{{product.id}}">
+					<img src="/assets/images/{{product.name|replace({"’":"", " ":""})}}.png" alt="{{product.name}}">
 					<h3>{{product.name}}</h3>
 				</div>
 				<p>
