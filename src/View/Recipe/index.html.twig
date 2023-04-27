@@ -7,7 +7,6 @@
 	Découvrez les meilleures recettes Tafforet, simples à réaliser et délicieuses. Retrouvez également des suggestions de vins pour accompagner vos plats.
 {% endblock %}
 
-
 {% block content %}
 	<h1 class="title-recipe">Les recettes Tafforet</h1>
 	<div class="img-recipe">
@@ -31,15 +30,9 @@
 					<div class='back-content'>
 						{{ recipe.back_content|raw }}
 					</div>
-
-
 				</div>
-
 				<a href="#article-{{ loop.index }}" role="button">Préparation : clique ici</a>
-
-
 			</article>
-
 		{% endfor %}
 		<div class="recette-container">
 			<h3>Suggestion de vin pour accompagner vos recettes
@@ -48,11 +41,9 @@
 		</div>
 		<div class="list-vin">
 			{% for wine in wines %}
-
 				<h4>{{ wine.type }}
 					:</h4>
 				{{ wine.name|raw }}
-
 			{% endfor %}
 		</div>
 	</section>
