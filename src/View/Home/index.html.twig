@@ -2,17 +2,20 @@
 
 {% block content %}
 
-<h1 class="title-home">Les Huîtres Tafforet</h1>
+	<h1 class="title-home">Les Huîtres Tafforet</h1>
 
-<swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" centered-slides="true" autoplay-delay="3000" autoplay-disable-on-interaction="false">
+	<swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" centered-slides="true" autoplay-delay="3000" autoplay-disable-on-interaction="false">
 		<swiper-slide><img src="/assets/images/image-carrousel/marennes.jpg" alt="photo_marennes"></swiper-slide>
-        <swiper-slide><img src="/assets/images/image-carrousel/Huitres-marennes-oleron-tourisme.jpg" alt="huitre_marennes"></swiper-slide>
+		<swiper-slide><img src="/assets/images/image-carrousel/Huitres-marennes-oleron-tourisme.jpg" alt="huitre_marennes"></swiper-slide>
 		<swiper-slide><img src="/assets/images/image-carrousel/IMG_Vueaerienne_marais.jpg" alt="photo_region"></swiper-slide>
 		<swiper-slide><img src="/assets/images/image-carrousel/vue-aerienne-marennes-Grand.png" alt="photo_marennes"></swiper-slide>
-        <swiper-slide><img src="/assets/images/image-carrousel/port-du-chapus.jpeg" alt="port"></swiper-slide>
+		<swiper-slide><img src="/assets/images/image-carrousel/port-du-chapus.jpeg" alt="port"></swiper-slide>
 	</swiper-container>
 
-<div id="ww_74bb7a75e5c2a" v='1.3' loc='id' a='{"t":"responsive","lang":"fr","sl_lpl":1,"ids":["wl7549"],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_tof":"3"}'>Weather Data Source: <a href="https://meteolongue.com/" id="ww_74bb7a75e5c2a_u" target="_blank">Meteo a 25 jours</a></div><script async src="https://app1.weatherwidget.org/js/?id=ww_74bb7a75e5c2a"></script>
+	<div id="ww_74bb7a75e5c2a" v='1.3' loc='id' a='{"t":"responsive","lang":"fr","sl_lpl":1,"ids":["wl7549"],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_tof":"3"}'>Weather Data Source:
+		<a href="https://meteolongue.com/" id="ww_74bb7a75e5c2a_u" target="_blank">Meteo a 25 jours</a>
+	</div>
+	<script async src="https://app1.weatherwidget.org/js/?id=ww_74bb7a75e5c2a"></script>
 
 	<section class="presentation-entreprise">
 		<div>
@@ -39,9 +42,9 @@
 		<div class="imageEvent">
 
 			<img src="/assets/images/marche_tafforet.jpg" alt="Le couple Tafforet sur un marché">
-            <div class="map-responsive">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18670.639265681843!2d-1.1257661921330706!3d45.81042343986325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4801642defa7e771%3A0x700cec5e2b250912!2sLes%20Hu%C3%AEtres%20Tafforet!5e1!3m2!1sfr!2sfr!4v1681894777434!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+			<div class="map-responsive">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18670.639265681843!2d-1.1257661921330706!3d45.81042343986325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4801642defa7e771%3A0x700cec5e2b250912!2sLes%20Hu%C3%AEtres%20Tafforet!5e1!3m2!1sfr!2sfr!4v1681894777434!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
 		</div>
 
 		<div class="eventDay">
@@ -72,21 +75,15 @@
 		<h2>Ils nous ont fait confiance</h2>
 	</div>
 
-    <section class="testimony-grid">
-    <div class="testimonies">
-    <p>“Miam miam trop bonnes les huîtres”</p>
-    <img src="/assets/images/five_stars.png" alt="Note de 5 étoiles">
-    </div>
-<div class="testimonies">
-    <p>“Huîtres fraîches et de qualités ! JFM.”</p>
-    <img src="/assets/images/five_stars.png" alt="Note de 5 étoiles">
-    </div>
-    <div class="testimonies">
-    <p>“J'ai rarement goûté des huîtres aussi fraîches et savoureuses que celles-ci”</p>
-    <img src="/assets/images/five_stars.png" alt="Note de 5 étoiles">
-    </div>
-    </section>
+	<section class="testimony-grid">
+		{% for testimonial in testimonials %}
+			<div class="testimonies">
+				<p>{{ testimonial.testimonial }}</p>
+				<img src="/assets/images/five_stars.png" alt="Note de 5 étoiles">
+			</div>
+		{% endfor %}
+	</section>
 {% endblock %}
-    {% block javascript %}
+{% block javascript %}
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
-   {% endblock %}
+{% endblock %}
