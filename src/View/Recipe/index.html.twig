@@ -1,10 +1,10 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Les recettes Tafforet | Des recettes délicieuses et originales
+{% block title %}Recettes Tafforet | Délicieuses et originales
 {% endblock %}
 
 {% block meta_description %}
-	Découvrez les meilleures recettes Tafforet, simples à réaliser et délicieuses. Retrouvez également des suggestions de vins pour accompagner vos plats.
+	Trouvez les meilleures recettes Tafforet, simples et délicieuses. Découvrez également des suggestions de vins pour accompagner vos plats.
 {% endblock %}
 
 {% block content %}
@@ -22,22 +22,24 @@
 						</h3>
 						{{ recipe.content|raw }}</div>
 					<figure class="image-content">
-						<img src="/assets/images/{{ recipe.image1 }}" alt="{{ recipe.name }}">
+						<img src="/assets/images/{{ recipe.image1 }}" alt="Image de {{ recipe.name }}">
 						{% if recipe.image2 is not null %}
-							<img src="/assets/images/{{ recipe.image2 }}" alt="{{ recipe.name }}">
+							<img src="/assets/images/{{ recipe.image2 }}" alt="Image{{ recipe.name }}">
 						{% endif %}
 					</figure>
 					<div class='back-content'>
 						{{ recipe.back_content|raw }}
 					</div>
 				</div>
-				<a href="#article-{{ loop.index }}" role="button" aria-label="Préparation pour {{ recipe.name }}">Préparation : clique ici</a>
+				<a href="#article-{{ loop.index }}" role="button" aria-label="Voir la préparation pour {{ recipe.name }}">Préparation : clique ici</a>
 			</article>
 		{% endfor %}
 		<aside class="recette-container">
 			<h3>Suggestion de vin pour accompagner vos recettes
-				<img src="/assets/images/vin.png" alt="Verre de vin">
-			</h3>
+				<figure>
+					<img src="/assets/images/vin.png" alt="Verre de vin">
+				</h3>
+			</figure>
 		</aside>
 		<div class="list-vin">
 			{% for wine in wines %}
