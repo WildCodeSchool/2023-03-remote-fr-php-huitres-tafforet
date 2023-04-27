@@ -62,42 +62,51 @@
 		</tbody>
 	</table>
 
-
 	<h2 class="hoyster_title">Huitres
 		<span>à la douzaine</span>
 	</h2>
 
-	<section class="hoyster">
-		{% for hoysterProduct in hoysterProducts %}
-			<article>
-				<div>
-					<img src="/assets/images/{{hoysterProduct.image}}" alt="{{wilder.name}}">
-					<h3>{{hoysterProduct.name}}</h3>
-				</div>
-				<p>
-					{{hoysterProduct.description }}
-				</p>
 
-				<div>
-					{{hoysterProduct.maturing|raw }}</div>
-			</article>
-		{% endfor %}
-	</section>
+
+	<section class="hoyster">
+
+
+	{% for product in products  %}
+    {% if  product.category_id == 1 %}
+		<article>
+			<div>
+				<img src="/assets/images/huitre{{product.id}}.png" alt="huitre{{product.id}}">
+				<h3>{{product.name}}</h3>
+			</div>
+			<p>
+				{{product.description }}
+			</p>
+
+			<div>
+				{{product.information|raw }}</div>
+		</article>
+        {% endif %}
+	{% endfor %}
+</section>
+
 	<h2 class="hoyster_title">Moules
 		<span>au Kilo</span>
 	</h2>
+
 	<section class="hoyster">
-		{% for mussleProduct in mussleProducts %}
+	{% for product in products  %}
+    {% if  product.category_id == 2 %}
 			<article>
 				<div>
-					<img src="/assets/images/{{mussleProduct.image}}" alt="{{mussleProduct.name}}">
-					<h3>{{mussleProduct.name}}</h3>
+					<img src="/assets/images/moule{{product.id}}.png" alt="moule{{product.id}}">
+					<h3>{{product.name}}</h3>
 				</div>
 				<p>
-					{{mussleProduct.description }}
+					{{product.description }}
 				</p>
 
 			</article>
+                    {% endif %}
 		{% endfor %}
 	</section>
 
