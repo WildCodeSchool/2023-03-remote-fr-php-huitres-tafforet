@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Model\UserManager;
 
-
 class AdminController extends AbstractController
 {
     public function index()
