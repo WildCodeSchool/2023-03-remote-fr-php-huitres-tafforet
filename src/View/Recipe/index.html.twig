@@ -9,9 +9,9 @@
 
 {% block content %}
 	<h1 class="title-recipe">Les recettes Tafforet</h1>
-	<div class="img-recipe">
+	<figure class="img-recipe">
 		<img src="/assets/images/image-recipe.png" alt="Image comportant un poisson dans une assiette">
-	</div>
+	</figure>
 	<section class="recipes-container">
 		{% for recipe in recipes %}
 			<article id="article-{{ loop.index }}">
@@ -21,24 +21,24 @@
 						<h3>Ingrédients
 						</h3>
 						{{ recipe.content|raw }}</div>
-					<div class="image-content">
+					<figure class="image-content">
 						<img src="/assets/images/{{ recipe.image1 }}" alt="{{ recipe.name }}">
 						{% if recipe.image2 is not null %}
 							<img src="/assets/images/{{ recipe.image2 }}" alt="{{ recipe.name }}">
 						{% endif %}
-					</div>
+					</figure>
 					<div class='back-content'>
 						{{ recipe.back_content|raw }}
 					</div>
 				</div>
-				<a href="#article-{{ loop.index }}" role="button">Préparation : clique ici</a>
+				<a href="#article-{{ loop.index }}" role="button" aria-label="Préparation pour {{ recipe.name }}">Préparation : clique ici</a>
 			</article>
 		{% endfor %}
-		<div class="recette-container">
+		<aside class="recette-container">
 			<h3>Suggestion de vin pour accompagner vos recettes
 				<img src="/assets/images/vin.png" alt="Verre de vin">
 			</h3>
-		</div>
+		</aside>
 		<div class="list-vin">
 			{% for wine in wines %}
 				<h4>{{ wine.type }}
