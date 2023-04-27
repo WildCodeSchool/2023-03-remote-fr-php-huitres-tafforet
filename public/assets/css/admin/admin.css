@@ -1,0 +1,30 @@
+.aside-admin{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1D334A;
+}
+.aside-admin h1{
+    color: #C9C081;
+    margin-bottom: 1rem;
+}
+.aside-admin a{
+    color: #C9C081;
+}
+.aside-admin ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5rem;
+    padding-bottom: 1rem;
+}
+.admin-index{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
