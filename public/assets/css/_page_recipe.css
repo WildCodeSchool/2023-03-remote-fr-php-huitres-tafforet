@@ -24,9 +24,11 @@ h3>img {
     align-items: flex-start;
 }
 
+
 .list-vin {
     display: grid;
     justify-content: center;
+    margin-block: 2rem;
 }
 
 @media only screen and (max-width: 960px) {
