@@ -17,6 +17,5 @@ class HomeController extends AbstractController
         return $this->twig->render('Home/index.html.twig', [
             'events' => $eventManager->selectAll(), 'testimonials' => $testimonialManager->selectAll()
         ]);
-
     }
 }
