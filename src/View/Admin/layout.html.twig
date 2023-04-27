@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="/assets/images/favicon.png">
+
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+        <link rel="stylesheet" href="/assets/css/admin/admin.css">
+        {% block stylesheet %}{% endblock %}
+    </head>
+
+    <body>
+        <aside class="aside-admin">
+            <h1>Admin</h1>
+            <nav>
+                <ul>
+                    <li><a href="/admin">Accueil</a></li>
+                    <li><a href="/admin/event">Evenements</a></li>
+                    <li><a href="/admin/testimony">Témoignages</a></li>
+                    <li><a href="/admin/recipe">Recettes</a></li>
+                    <li><a href="/admin/product">Produits</a></li>
+                    <li><a href="/logout">Déconnexion</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        {% block javascript %}{% endblock %}
+    </body>
+</html>

@@ -106,6 +106,20 @@ CREATE TABLE IF NOT EXISTS `devis_product` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `user`
+-- -----------------------------------------------------
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `pseudo` varchar(45) DEFAULT NULL,
+  `firstname` varchar(45) DEFAULT NULL,
+  `lastname` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+=======
 CREATE TABLE IF NOT EXISTS `wine` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(255) NULL,
@@ -113,7 +127,13 @@ CREATE TABLE IF NOT EXISTS `wine` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+
 USE tafforet;
+
+
+INSERT INTO `user` VALUES (1,'admin@test.com','$2y$10$4Fr/E4Lcj8HRTQ5UtXBE4./ut/diPoZQLzICLRQqqFU5NamJpsKOK','Marty','Marty','McFly'),
+(2, 'admin@admin.com', '$2y$10$g1n3vUyP558UCdkwnxBYLucYlj9fGRtlygFemuYPbvUelQewdVG2e', 'admin', 'admin','admin');
+
 
 	INSERT INTO `event` (`text`)
 VALUES (
@@ -217,6 +237,8 @@ VALUES (
     NULL,
     2
 );
+
+
 
 INSERT INTO
         `recipe` (
@@ -326,4 +348,5 @@ VALUES
       <li>Bordeaux rouge</li>
       <li>Bordeaux un brulhois rouge</li></ul>'
       );
+
 
