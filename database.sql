@@ -142,13 +142,13 @@ VALUES (
 
 	INSERT INTO `category` (type) VALUES ('huître'), ('moule');
 
-    INSERT INTO `testimonial` (`testimonial`)
+INSERT INTO `testimonial` (`testimonial`)
 VALUES (
         '“Miam miam trop bonnes les huîtres”'
     ), (
-        '“Huîtres fraîches et de qualités ! JFM.”'
+        '“Huîtres fraîches et de qualité ! JFM.”'
     ), (
-        '“J\'ai rarement goûté des huîtres aussi fraîches et savoureuses que celles-ci”'
+        '“J’ai rarement goûté des huîtres aussi fraîches et savoureuses que celles-ci”'
     );
 
 	INSERT INTO `category` (type) VALUES ('huître'), ('moule');
