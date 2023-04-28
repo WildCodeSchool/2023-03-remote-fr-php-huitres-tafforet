@@ -1,10 +1,47 @@
 {% extends "Admin/layout.html.twig" %}
 
 {% block content %}
-<section class="admin-index">
-    <h1>Admin index</h1>
-    <p>Bonjour {{ user.firstname }}, ici vous pourrez modifier le contenu
-    de votre site en vous déplaçant dans les différentes rubriques présentes dans la barre
-    de navigation.</p>
-    </section>
+	<section class="admin-index">
+		<h1>Admin index</h1>
+		<p>Bonjour
+			{{ user.firstname }}, ici vous pourrez modifier le contenu
+			    de votre site en vous déplaçant dans les différentes rubriques présentes dans la barre
+			    de navigation.</p>
+	</section>
+
+	<h2>Devis</h2>
+	<table role="grid">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Prénom</th>
+				<th>Nom</th>
+				<th>Téléphone</th>
+				<th>Email</th>
+				<th>Adresse</th>
+				<th>Livraison</th>
+				<th>Commentaire</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for order in orders %}
+				<tr>
+					<td>{{order.id}}</td>
+					<td>
+						{{order.firstname}}
+					</td>
+					<td>{{order.lastname}}</td>
+					<td>{{order.phone}}</td>
+					<td>{{order.email}}</td>
+					<td>{{order.address}}</td>
+					<td>{{order.delivery}}</td>
+					<td>{{order.comment}}</td>
+					<td>
+						<a href="/admin/delete?id={{order.id}}">Delete</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
 {% endblock %}
