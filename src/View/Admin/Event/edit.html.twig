@@ -1,0 +1,11 @@
+{% extends 'Admin/layout.html.twig' %}
+
+{% block content %}
+
+    <h1>Modifier évenement{{ event.text }}</h1>
+
+    {% include 'Admin/Event/_form.html.twig' %}
+
+    <a href="index">Back</a>
+
+{% endblock %}

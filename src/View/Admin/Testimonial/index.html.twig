@@ -1,0 +1,31 @@
+{% extends 'Admin/layout.html.twig' %}
+
+{% block content %}
+	<h1>Liste des évenements</h1>
+	<a href="/testimonial/add">Ajouter d'un nouveau commentaire</a>
+	<table role="grid">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Texte</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for testimonial in testimonials %}
+				<tr>
+					<td>{{ testimonial.id }}</td>
+					<td>
+						{{ testimonial.testimonial }}
+					</td>
+					<td>
+						<a href="/testimonial/edit?id={{testimonial.id}}">Modifier</a>
+					</td>
+					<td>
+						<a href="/testimonial/delete?id={{testimonial.id}}">Delete</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'Admin/layout.html.twig' %}
+
+{% block content %}
+
+    <h1>Edit recipe {{ recipe.name }}</h1>
+
+    {% include 'Admin/Recipe/_form.html.twig' %}
+
+    <a href="index">Back</a>
+
+{% endblock %}

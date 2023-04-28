@@ -1,0 +1,12 @@
+{% block content %}
+
+	<form method="post">
+		<input type="hidden" value="{{ testimonial.id }}" name="id">
+
+		<label for="title">Texte</label>
+		<input type="text" value="{{ testimonial.testimonial }}" name="testimonial" id="testimonial">
+
+		<button>Submit</button>
+	</form>
+
+{% endblock %}
