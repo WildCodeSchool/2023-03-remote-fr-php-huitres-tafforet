@@ -127,10 +127,6 @@ CREATE TABLE IF NOT EXISTS `wine` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-
-USE tafforet;
-
-
 INSERT INTO `user` VALUES (1,'admin@test.com','$2y$10$4Fr/E4Lcj8HRTQ5UtXBE4./ut/diPoZQLzICLRQqqFU5NamJpsKOK','Marty','Marty','McFly'),
 (2, 'admin@admin.com', '$2y$10$g1n3vUyP558UCdkwnxBYLucYlj9fGRtlygFemuYPbvUelQewdVG2e', 'admin', 'admin','admin');
 
