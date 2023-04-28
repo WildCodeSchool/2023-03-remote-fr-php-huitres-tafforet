@@ -1,0 +1,11 @@
+{% extends 'Admin/layout.html.twig' %}
+
+{% block content %}
+
+	<h1>Modifier commentaire{{ testimonial.testimonial }}</h1>
+
+	{% include 'Admin/Testimonial/_form.html.twig' %}
+
+	<a href="index">Back</a>
+
+{% endblock %}
