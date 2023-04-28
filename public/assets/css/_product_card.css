@@ -21,7 +21,7 @@ section.hoyster>article{
 section.hoyster>article>div>h3,
 section.hoyster>article>p:last-child{
     margin-top: 1rem;
-    text-align: center;
+
 }
 .hoyster_title {
     background-color: var(--card-dark-color);
@@ -41,5 +41,7 @@ section.hoyster>article>div>img{
     border-radius: calc(var(--border-radius)*2);
 }
 
-
+section.hoyster>article>div:last-child{
+    padding-bottom: 2rem;
+}
 
