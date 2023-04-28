@@ -254,7 +254,7 @@ INSERT INTO
   <li>Pour l’apéritif : calibre N° 4</li>
   <li>10 à 12 huîtres Marennes Oléron</li>
   <li>3 tranches de poitrine fumée</li>
-  <li>2 poivrons rouge</li>
+  <li>2 poivrons rouges</li>
   </ul>',
   '<ul>
   <li>Préparation : 30min | Cuisson : 20min</li>
