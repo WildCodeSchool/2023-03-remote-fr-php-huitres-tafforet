@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `devis_product` (
   CONSTRAINT `fk_devis_has_product_devis1`
     FOREIGN KEY (`devis_id`)
     REFERENCES `devis` (`id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_devis_has_product_product1`
     FOREIGN KEY (`product_id`)
@@ -119,7 +119,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-=======
+
 CREATE TABLE IF NOT EXISTS `wine` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(255) NULL,

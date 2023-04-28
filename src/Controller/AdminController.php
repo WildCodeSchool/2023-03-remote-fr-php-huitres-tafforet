@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\UserManager;
+use App\Model\FormManager;
 
 class AdminController extends AbstractController
 {
@@ -12,7 +13,11 @@ class AdminController extends AbstractController
             header('Location: /login');
             exit();
         }
-        return $this->twig->render('Admin/index.html.twig');
+        $formManager = new FormManager();
+        $orders = $formManager->selectAll();
+        return $this->twig->render('Admin/index.html.twig', [
+            'orders' => $orders
+        ]);
     }
 
     public function login(): string
@@ -34,5 +39,12 @@ class AdminController extends AbstractController
     {
         unset($_SESSION['user_id']);
         header('Location: /');
+    }
+
+    public function delete(int $id): void
+    {
+        $formManager = new FormManager();
+        $formManager->deleteDevis((int)$id);
+        header('Location: /admin');
     }
 }

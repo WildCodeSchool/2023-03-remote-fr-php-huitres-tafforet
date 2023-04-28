@@ -17,6 +17,7 @@ return [
     'admin' => ['AdminController', 'index'],
     'login' => ['AdminController', 'login'],
     'logout' => ['AdminController', 'logout'],
+    'admin/delete' => ['AdminController', 'delete', ['id']],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],
