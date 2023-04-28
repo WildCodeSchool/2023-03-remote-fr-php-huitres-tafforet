@@ -5,6 +5,7 @@ namespace App\Model;
 class FormManager extends AbstractManager
 {
     public const TABLE = 'devis';
+    public const JOINTABLE = 'devis_product';
 
     /**
      * Insert new item in database
@@ -33,6 +34,15 @@ class FormManager extends AbstractManager
         $statement->bindValue('devis_id', $devisId, \PDO::PARAM_INT);
         $statement->bindValue('product_id', $productId, \PDO::PARAM_INT);
 
+        return $statement->execute();
+    }
+
+    public function deleteDevis(int $id)
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("DELETE FROM " . static::JOINTABLE . " WHERE devis_id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $this->delete($id);
         return $statement->execute();
     }
 }

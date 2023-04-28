@@ -1,0 +1,12 @@
+{% block content %}
+
+    <form method="post">
+        <input type="hidden" value="{{ event.id }}" name="id">
+
+        <label for="title">Texte</label>
+        <input type="text" value="{{ event.text }}" name="text" id="text">
+
+        <button>Submit</button>
+    </form>
+
+{% endblock %}
