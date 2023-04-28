@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Model\EventManager;
 
 class AdminEventController extends AbstractController
