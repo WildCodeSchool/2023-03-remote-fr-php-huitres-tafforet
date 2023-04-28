@@ -11,7 +11,7 @@ class AdminTestimonialController extends AbstractController
         $testimonialManager = new TestimonialManager();
         $testimonials = $testimonialManager->selectAll();
 
-        return $this->twig->render('Admin/testimonial/index.html.twig', [
+        return $this->twig->render('Admin/Testimonial/index.html.twig', [
             'testimonials' => $testimonials,
         ]);
     }
@@ -32,7 +32,7 @@ class AdminTestimonialController extends AbstractController
             return null;
         }
 
-        return $this->twig->render('Admin/testimonial/add.html.twig');
+        return $this->twig->render('Admin/Testimonial/add.html.twig');
     }
 
     public function edit(int $id): ?string
@@ -55,7 +55,7 @@ class AdminTestimonialController extends AbstractController
             return null;
         }
 
-        return $this->twig->render('Admin/testimonial/edit.html.twig', [
+        return $this->twig->render('Admin/Testimonial/edit.html.twig', [
             'testimonial' => $testimonialManager->selectOneById($id)
         ]);
     }
