@@ -1,0 +1,35 @@
+{% extends 'Admin/layout.html.twig' %}
+
+{% block content %}
+	<h1>Liste des recettes</h1>
+	<a href="/recipe/add">Ajouter une nouvelle recette</a>
+	<table role="grid">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nom</th>
+				<th>Ingrédients</th>
+				<th>Etapes</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for recipe in recipes %}
+				<tr>
+					<td>{{recipe.id}}</td>
+					<td>
+						{{recipe.name}}
+					</td>
+					<td>{{recipe.content|raw}}</td>
+					<td>{{recipe.back_content|raw}}</td>
+					<td>
+						<a href="/recipe/edit?id={{recipe.id}}">Modifier</a>
+					</td>
+					<td>
+                        <a href="/recipe/delete?id={{recipe.id}}">Delete</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}
