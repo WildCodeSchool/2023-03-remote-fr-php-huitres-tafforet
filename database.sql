@@ -126,6 +126,18 @@ CREATE TABLE IF NOT EXISTS `wine` (
   `name` VARCHAR(255) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
+-- -----------------------------------------------------
+-- Table `file`
+-- -----------------------------------------------------
+CREATE TABLE
+        `file` (
+            `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            `name` varchar(255) DEFAULT NULL,
+            `is_image` TINYINT,
+            `recipe_id` INT,
+            CONSTRAINT `fk_file_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+            `position` INT
+        ) ENGINE = InnoDB;
 
 INSERT INTO `user` VALUES (1,'admin@test.com','$2y$10$4Fr/E4Lcj8HRTQ5UtXBE4./ut/diPoZQLzICLRQqqFU5NamJpsKOK','Marty','Marty','McFly'),
 (2, 'admin@admin.com', '$2y$10$g1n3vUyP558UCdkwnxBYLucYlj9fGRtlygFemuYPbvUelQewdVG2e', 'admin', 'admin','admin');

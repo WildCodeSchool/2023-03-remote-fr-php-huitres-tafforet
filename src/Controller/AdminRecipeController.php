@@ -68,9 +68,22 @@ class AdminRecipeController extends AbstractController
     public function delete(int $id): void
     {
 
-            $recipeManager = new RecipeManager();
-            $recipeManager->delete((int)$id);
+        $recipeManager = new RecipeManager();
+        $recipeManager->delete((int)$id);
 
-            header('Location:/recipe/index');
+        header('Location:/recipe/index');
+    }
+    public function addFiles()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $uploadsDir = __DIR__ . '/../../public/uploads/';
+            if (!is_dir($uploadsDir)) {
+                mkdir($uploadsDir);
+            }
+            foreach ($_FILES['files']['tmp_name'] as $index => $tmpName) {
+                $fileName = $_FILES['files']['name'][$index];
+                move_uploaded_file($tmpName, $uploadsDir . $fileName);
+            }
+        }
     }
 }

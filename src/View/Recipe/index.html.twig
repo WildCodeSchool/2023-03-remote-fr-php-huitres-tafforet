@@ -22,9 +22,9 @@
 						</h3>
 						{{ recipe.content|raw }}</div>
 					<figure class="image-content">
-						<img src="/assets/images/{{ recipe.image1 }}" alt="Image de {{ recipe.name }}">
+						<img src="/uploads/{{ recipe.image1 }}" alt="Image de {{ recipe.name }}">
 						{% if recipe.image2 is not null %}
-							<img src="/assets/images/{{ recipe.image2 }}" alt="Image{{ recipe.name }}">
+							<img src="/uploads/{{ recipe.image2 }}" alt="Image{{ recipe.name }}">
 						{% endif %}
 					</figure>
 					<div class='back-content'>
