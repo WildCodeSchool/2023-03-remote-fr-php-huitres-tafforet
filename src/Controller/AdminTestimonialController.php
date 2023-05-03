@@ -18,11 +18,10 @@ class AdminTestimonialController extends AbstractController
 
     public function add(): ?string
     {
+        $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $testimonial = array_map('trim', $_POST);
-            $errors = [];
-
             // TODO validations (length, format...)
             if (strlen($testimonial['testimonial']) < 10) {
                 $errors[] = 'Un témoignage a besoin de plus de 10 caractères.';

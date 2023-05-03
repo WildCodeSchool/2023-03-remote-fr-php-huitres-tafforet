@@ -61,7 +61,6 @@ class AdminRecipeController extends AbstractController
         $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             // clean $_POST data
             $recipe = array_map('trim', $_POST);
 
