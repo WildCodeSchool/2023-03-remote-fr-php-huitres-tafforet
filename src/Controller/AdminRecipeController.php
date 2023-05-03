@@ -23,10 +23,12 @@ class AdminRecipeController extends AbstractController
 
     public function add(): ?string
     {
+        $errors = [];
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $recipe = array_map('trim', $_POST);
-            $errors = [];
+
 
             // TODO validations (length, format...)
             if (empty($recipe['name'])) {
@@ -37,10 +39,6 @@ class AdminRecipeController extends AbstractController
             }
             if (empty($recipe['back_content']) || strlen($recipe['back_content']) < 10) {
                 $errors[] = 'Le champ étapes doit être completé et faire plus de 10 caractères.';
-            }
-            if (!empty($errors)) {
-                return $this->twig->render('Admin/recipe/add.html.twig', [
-                    'errors' => $errors]);
             }
             // if validation is ok, insert and redirection
             if (empty($errors)) {
@@ -52,18 +50,20 @@ class AdminRecipeController extends AbstractController
             }
         }
 
-        return $this->twig->render('Admin/Recipe/add.html.twig');
+        return $this->twig->render('Admin/recipe/add.html.twig', [
+            'errors' => $errors]);
     }
 
     public function edit(int $id): ?string
     {
         $recipeManager = new RecipeManager();
-
+        $recipe = $recipeManager->selectOneById($id);
+        $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             // clean $_POST data
             $recipe = array_map('trim', $_POST);
-            $errors = [];
 
             // TODO validations (length, format...)
             if (empty($recipe['name'])) {
@@ -76,11 +76,6 @@ class AdminRecipeController extends AbstractController
 
             if (empty($recipe['back_content']) || strlen($recipe['back_content']) < 10) {
                 $errors[] = 'Le champ étapes doit être completé et faire plus de 10 caractères.';
-            }
-
-            if (!empty($errors)) {
-                return $this->twig->render('Admin/recipe/add.html.twig', [
-                    'errors' => $errors, 'recipe' => $recipe]);
             }
 
             // if validation is ok, update and redirection
@@ -95,7 +90,8 @@ class AdminRecipeController extends AbstractController
         }
 
         return $this->twig->render('Admin/Recipe/edit.html.twig', [
-            'recipe' => $recipeManager->selectOneById($id)
+            'recipe' => $recipe,
+            'errors' => $errors
         ]);
     }
 

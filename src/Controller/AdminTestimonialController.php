@@ -31,11 +31,6 @@ class AdminTestimonialController extends AbstractController
             if (empty($testimonial['testimonial'])) {
                 $errors[] = 'Le champ texte est vide.';
             }
-
-            if (!empty($errors)) {
-                return $this->twig->render('Admin/testimonial/add.html.twig', ['errors' => $errors]);
-            }
-
             // if validation is ok, insert and redirection
             if (empty($errors)) {
                 $testimonialManager = new TestimonialManager();
@@ -46,13 +41,14 @@ class AdminTestimonialController extends AbstractController
             }
         }
 
-        return $this->twig->render('Admin/testimonial/add.html.twig');
+        return $this->twig->render('Admin/testimonial/add.html.twig', ['errors' => $errors]);
     }
 
     public function edit(int $id): ?string
     {
         $testimonialManager = new TestimonialManager();
         $errors = [];
+        $testimonial = $testimonialManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
@@ -66,13 +62,6 @@ class AdminTestimonialController extends AbstractController
             if (empty($testimonial['testimonial'])) {
                 $errors[] = 'Le champ texte est vide.';
             }
-
-            if (!empty($errors)) {
-                return $this->twig->render('Admin/testimonial/edit.html.twig', [
-                    'errors' => $errors, 'testimonial' => $testimonial
-                ]);
-            }
-
             // if validation is ok, update and redirection
             if (empty($errors)) {
                 $testimonialManager->update($testimonial);
@@ -85,7 +74,8 @@ class AdminTestimonialController extends AbstractController
         }
 
         return $this->twig->render('Admin/testimonial/edit.html.twig', [
-            'testimonial' => $testimonialManager->selectOneById($id)
+            'testimonial' => $testimonial,
+            'errors' => $errors,
         ]);
     }
 

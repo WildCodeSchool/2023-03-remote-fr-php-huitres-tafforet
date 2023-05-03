@@ -18,11 +18,11 @@ class AdminEventController extends AbstractController
 
     public function add(): ?string
     {
+        $errors = [];
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $event = array_map('trim', $_POST);
-
-            $errors = [];
 
             // TODO validations (length, format...)
             if (strlen($event['text']) < 10) {
@@ -31,11 +31,6 @@ class AdminEventController extends AbstractController
 
             if (empty($event['text'])) {
                 $errors[] = 'Le champ texte est vide.';
-            }
-
-            if (!empty($errors)) {
-                return $this->twig->render('Admin/Event/add.html.twig', [
-                    'errors' => $errors]);
             }
 
             // if validation is ok, insert and redirection
@@ -48,13 +43,15 @@ class AdminEventController extends AbstractController
             }
         }
 
-        return $this->twig->render('Admin/Event/add.html.twig');
+        return $this->twig->render('Admin/Event/add.html.twig', [
+            'errors' => $errors]);
     }
 
     public function edit(int $id): ?string
     {
         $eventManager = new EventManager();
-
+        $event = $eventManager->selectOneById($id);
+        $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
@@ -68,11 +65,6 @@ class AdminEventController extends AbstractController
 
             if (empty($event['text'])) {
                 $errors[] = 'Le champ texte est vide.';
-            }
-
-            if (!empty($errors)) {
-                return $this->twig->render('Admin/event/edit.html.twig', [
-                    'errors' => $errors, 'event' => $event]);
             }
 
             // if validation is ok, update and redirection
@@ -86,8 +78,7 @@ class AdminEventController extends AbstractController
         }
 
         return $this->twig->render('Admin/event/edit.html.twig', [
-            'event' => $eventManager->selectOneById($id)
-        ]);
+            'errors' => $errors, 'event' => $event]);
     }
 
     public function delete(int $id): void
