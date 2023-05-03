@@ -15,15 +15,6 @@ class AdminEventController extends AbstractController
             'events' => $events,
         ]);
     }
-    // private function validate(array $event)
-    // {
-
-    //     if (!empty($event['text']) && strlen($event['text']) < 10) {
-    //         $errors[] = 'The title should be less than 255 characters';
-    //     }
-
-    //     return $errors ?? [];
-    // }
 
     public function add(): ?string
     {
