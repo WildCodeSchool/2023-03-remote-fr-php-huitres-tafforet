@@ -27,26 +27,28 @@ class AdminRecipeController extends AbstractController
             // clean $_POST data
             $recipe = array_map('trim', $_POST);
             $errors = [];
+
             // TODO validations (length, format...)
-            if(empty($recipe['name'])) {
+            if (empty($recipe['name'])) {
                 $errors[] = 'Le champ nom est vide.';
             }
-            if(empty($recipe['content']) || strlen($recipe['content']) < 10) {
+            if (empty($recipe['content']) || strlen($recipe['content']) < 10) {
                 $errors[] = 'Le champ ingrédients doit être completé et faire plus de 10 caractères.';
             }
-            if(empty($recipe['back_content']) || strlen($recipe['back_content']) < 10) {
+            if (empty($recipe['back_content']) || strlen($recipe['back_content']) < 10) {
                 $errors[] = 'Le champ étapes doit être completé et faire plus de 10 caractères.';
             }
-            if(!empty($errors)){
-                return $this->twig->render('Admin/recipe/add.html.twig', ['errors' => $errors]);;
+            if (!empty($errors)) {
+                return $this->twig->render('Admin/recipe/add.html.twig', [
+                    'errors' => $errors]);
             }
             // if validation is ok, insert and redirection
-            if(empty($errors)) {
-            $recipeManager = new RecipeManager();
-            $recipe = $recipeManager->insert($recipe);
+            if (empty($errors)) {
+                $recipeManager = new RecipeManager();
+                $recipe = $recipeManager->insert($recipe);
 
-            header('Location:/recipe/index');
-            return null;
+                header('Location:/recipe/index');
+                return null;
             }
         }
 
@@ -61,28 +63,34 @@ class AdminRecipeController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $recipe = array_map('trim', $_POST);
+            $errors = [];
 
             // TODO validations (length, format...)
-            if(empty($recipe['name'])) {
+            if (empty($recipe['name'])) {
                 $errors[] = 'Le champ nom est vide.';
             }
-            if(empty($recipe['content']) || strlen($recipe['content']) < 10) {
+
+            if (empty($recipe['content']) || strlen($recipe['content']) < 10) {
                 $errors[] = 'Le champ ingrédients doit être completé et faire plus de 10 caractères.';
             }
-            if(empty($recipe['back_content']) || strlen($recipe['back_content']) < 10) {
+
+            if (empty($recipe['back_content']) || strlen($recipe['back_content']) < 10) {
                 $errors[] = 'Le champ étapes doit être completé et faire plus de 10 caractères.';
             }
-            if(!empty($errors)){
-                return $this->twig->render('Admin/recipe/add.html.twig', ['errors' => $errors, 'recipe' => $recipe]);;
+
+            if (!empty($errors)) {
+                return $this->twig->render('Admin/recipe/add.html.twig', [
+                    'errors' => $errors, 'recipe' => $recipe]);
             }
+
             // if validation is ok, update and redirection
-            if(empty($errors)){
-            $recipeManager->update($recipe);
+            if (empty($errors)) {
+                $recipeManager->update($recipe);
 
-            header('Location: /recipe/index');
+                header('Location: /recipe/index');
 
-            // we are redirecting so we don't want any content rendered
-            return null;
+                // we are redirecting so we don't want any content rendered
+                return null;
             }
         }
 
@@ -94,9 +102,9 @@ class AdminRecipeController extends AbstractController
     public function delete(int $id): void
     {
 
-            $recipeManager = new RecipeManager();
-            $recipeManager->delete((int)$id);
+        $recipeManager = new RecipeManager();
+        $recipeManager->delete((int)$id);
 
-            header('Location:/recipe/index');
+        header('Location:/recipe/index');
     }
 }
