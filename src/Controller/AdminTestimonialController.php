@@ -41,7 +41,6 @@ class AdminTestimonialController extends AbstractController
         }
 
         return $this->twig->render('Admin/testimonial/add.html.twig', ['errors' => $errors]);
-
     }
 
     public function edit(int $id): ?string
