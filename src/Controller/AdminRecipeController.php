@@ -23,45 +23,75 @@ class AdminRecipeController extends AbstractController
 
     public function add(): ?string
     {
+        $errors = [];
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $recipe = array_map('trim', $_POST);
 
+
             // TODO validations (length, format...)
-
+            if (empty($recipe['name'])) {
+                $errors[] = 'Le champ nom est vide.';
+            }
+            if (empty($recipe['content']) || strlen($recipe['content']) < 10) {
+                $errors[] = 'Le champ ingrédients doit être completé et faire plus de 10 caractères.';
+            }
+            if (empty($recipe['back_content']) || strlen($recipe['back_content']) < 10) {
+                $errors[] = 'Le champ étapes doit être completé et faire plus de 10 caractères.';
+            }
             // if validation is ok, insert and redirection
-            $recipeManager = new RecipeManager();
-            $recipe = $recipeManager->insert($recipe);
+            if (empty($errors)) {
+                $recipeManager = new RecipeManager();
+                $recipe = $recipeManager->insert($recipe);
 
-            header('Location:/recipe/index');
-            return null;
+                header('Location:/recipe/index');
+                return null;
+            }
         }
 
-        return $this->twig->render('Admin/Recipe/add.html.twig');
+        return $this->twig->render('Admin/recipe/add.html.twig', [
+            'errors' => $errors
+        ]);
     }
 
     public function edit(int $id): ?string
     {
         $recipeManager = new RecipeManager();
-
+        $recipe = $recipeManager->selectOneById($id);
+        $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $recipe = array_map('trim', $_POST);
 
             // TODO validations (length, format...)
+            if (empty($recipe['name'])) {
+                $errors[] = 'Le champ nom est vide.';
+            }
+
+            if (empty($recipe['content']) || strlen($recipe['content']) < 10) {
+                $errors[] = 'Le champ ingrédients doit être completé et faire plus de 10 caractères.';
+            }
+
+            if (empty($recipe['back_content']) || strlen($recipe['back_content']) < 10) {
+                $errors[] = 'Le champ étapes doit être completé et faire plus de 10 caractères.';
+            }
 
             // if validation is ok, update and redirection
-            $recipeManager->update($recipe);
+            if (empty($errors)) {
+                $recipeManager->update($recipe);
 
-            header('Location: /recipe/index');
+                header('Location: /recipe/index');
 
-            // we are redirecting so we don't want any content rendered
-            return null;
+                // we are redirecting so we don't want any content rendered
+                return null;
+            }
         }
 
         return $this->twig->render('Admin/Recipe/edit.html.twig', [
-            'recipe' => $recipeManager->selectOneById($id)
+            'recipe' => $recipe,
+            'errors' => $errors
         ]);
     }
 

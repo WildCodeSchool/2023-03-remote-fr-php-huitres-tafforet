@@ -3,7 +3,12 @@
 {% block content %}
 
 	<h1>Modifier commentaire{{ testimonial.testimonial }}</h1>
-
+     <h4>Erreurs :</h4>
+    <ul>
+        {% for error in errors %}
+            <li class="errors">{{ error }}</li>
+        {% endfor %}
+        </ul>
 	{% include 'Admin/Testimonial/_form.html.twig' %}
 
 	<a href="index">Back</a>
