@@ -2,8 +2,13 @@
 
 {% block content %}
 
-    <h1>Modifier évenement{{ event.text }}</h1>
-
+    <h1>Modifier évenement {{ event.text }}</h1>
+     <h4>Erreurs :</h4>
+    <ul>
+        {% for error in errors %}
+            <li class="errors">{{ error }}</li>
+        {% endfor %}
+        </ul>
     {% include 'Admin/Event/_form.html.twig' %}
 
     <a href="index">Back</a>

@@ -21,16 +21,26 @@ class AdminTestimonialController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $testimonial = array_map('trim', $_POST);
-
+            $errors = [];
             // TODO validations (length, format...)
-
+             if(strlen($testimonial['testimonial']) < 10) {
+                $errors[] = 'Un témoignage a besoin de plus de 10 caractères.';
+            }
+            if(empty($testimonial['testimonial'])) {
+                $errors[] = 'Le champ texte est vide.';
+            }
+            if(!empty($errors)){
+                return $this->twig->render('Admin/testimonial/add.html.twig', ['errors' => $errors]);;
+            }
             // if validation is ok, insert and redirection
+            if(empty($errors)) {
             $testimonialManager = new TestimonialManager();
             $testimonial = $testimonialManager->insert($testimonial);
 
             header('Location:/testimonial/index');
             return null;
         }
+    }
 
         return $this->twig->render('Admin/testimonial/add.html.twig');
     }
@@ -38,21 +48,32 @@ class AdminTestimonialController extends AbstractController
     public function edit(int $id): ?string
     {
         $testimonialManager = new TestimonialManager();
-
+        $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
-            $event = array_map('trim', $_POST);
+            $testimonial = array_map('trim', $_POST);
 
             // TODO validations (length, format...)
-
+            if(strlen($testimonial['testimonial']) < 10) {
+                $errors[] = 'Un témoignage a besoin de plus de 10 caractères.';
+            }
+            if(empty($testimonial['testimonial'])) {
+                $errors[] = 'Le champ texte est vide.';
+            }
+            if(!empty($errors))
+            {
+                return $this->twig->render('Admin/testimonial/edit.html.twig', ['errors' => $errors, 'testimonial' => $testimonial]);
+            }
             // if validation is ok, update and redirection
-            $testimonialManager->update($event);
+            if(empty($errors)) {
+            $testimonialManager->update($testimonial);
 
             header('Location: /testimonial/index');
 
             // we are redirecting so we don't want any content rendered
             return null;
+        }
         }
 
         return $this->twig->render('Admin/testimonial/edit.html.twig', [
