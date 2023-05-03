@@ -21,6 +21,8 @@
 				<th>Adresse</th>
 				<th>Livraison</th>
 				<th>Commentaire</th>
+                <th>Produit</th>
+                {{ dump (orders)}}
 			</tr>
 		</thead>
 		<tbody>
@@ -36,6 +38,7 @@
 					<td>{{order.address}}</td>
 					<td>{{order.delivery}}</td>
 					<td>{{order.comment}}</td>
+                    <td>{{order.product_name}}</td>
 					<td>
 						<a href="/admin/delete?id={{order.id}}">Delete</a>
 					</td>
