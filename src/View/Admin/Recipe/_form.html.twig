@@ -3,13 +3,13 @@
 	<form method="post">
 		<input type="hidden" value="{{ recipe.id }}" name="id">
 
-		<label for="title">Name</label>
+		<label for="title">Nom</label>
 		<input type="text" value="{{ recipe.name }}" name="name" id="name">
 
-		<label for="title">content</label>
+		<label for="title">Ingrédients</label>
 		<input type="text" value="{{ recipe.content }}" name="content" id="content">
 
-		<label for="title">back content</label>
+		<label for="title">Etapes</label>
 		<input type="text" value="{{ recipe.back_content }}" name="back_content" id="back_content">
 
 		<button>Submit</button>

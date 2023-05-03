@@ -3,7 +3,12 @@
 {% block content %}
 
     <h1>Ajout d'un nouvel évenement</h1>
-
+    <h4>Erreurs :</h4>
+    <ul>
+        {% for error in errors %}
+            <li class="errors">{{ error }}</li>
+        {% endfor %}
+        </ul>
     {% include 'Admin/Event/_form.html.twig' %}
 
 {% endblock %}
