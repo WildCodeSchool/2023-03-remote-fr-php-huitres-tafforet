@@ -1,0 +1,21 @@
+{% block content %}
+
+	<form method="post">
+		<input type="hidden" value="{{ product.id }}" name="id">
+
+		<label for="title">Nom</label>
+		<input type="text" value="{{ product.name }}" name="name" id="name">
+
+		<label for="title">Description</label>
+		<input type="text" value="{{ product.description }}" name="description" id="description">
+
+		<label for="title">Information</label>
+		<input type="text" value="{{ product.information }}" name="information" id="information">
+
+		<label for="huitre"><input type="checkbox" id="huitre" name="category_id" value="1">Huître</label>
+		<label for="moule"><input type="checkbox" id="moule" name="category_id" value="2">Moule</label>
+
+		<button>Submit</button>
+	</form>
+
+{% endblock %}
