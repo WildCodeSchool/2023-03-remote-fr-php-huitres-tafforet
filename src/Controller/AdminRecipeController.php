@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\FileManager;
 use App\Model\WineManager;
 use App\Model\RecipeManager;
 
@@ -88,9 +89,10 @@ class AdminRecipeController extends AbstractController
                 return null;
             }
         }
-
+        $fileManager = new FileManager();
         return $this->twig->render('Admin/Recipe/edit.html.twig', [
             'recipe' => $recipe,
+            'files' => $fileManager->selectAllByrecipeId($id),
             'errors' => $errors
         ]);
     }
@@ -110,10 +112,24 @@ class AdminRecipeController extends AbstractController
             if (!is_dir($uploadsDir)) {
                 mkdir($uploadsDir);
             }
+            $recipeId = $_POST['recipe_id'];
+            $fileManager = new FileManager();
             foreach ($_FILES['files']['tmp_name'] as $index => $tmpName) {
                 $fileName = $_FILES['files']['name'][$index];
-                move_uploaded_file($tmpName, $uploadsDir . $fileName);
+                if (move_uploaded_file($tmpName, $uploadsDir . $fileName)) {
+                    $fileManager->insert($fileName, $recipeId);
+                }
             }
+            header('Location: /recipe/edit?id=' . $recipeId);
         }
+    }
+    public function deleteFile(int $id)
+    {
+        $fileManager = new FileManager();
+        $file = $fileManager->selectOneById($id);
+        if (unlink(__DIR__ . '/../../public/uploads/' . $file['name'])) {
+            $fileManager->delete($id);
+        }
+        header('Location: /recipe/edit?id=' . $file['recipe_id']);
     }
 }
