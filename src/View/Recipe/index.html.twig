@@ -26,11 +26,6 @@
 						{% for file in recipe.files %}
 							<img src="/uploads/{{ file.name }}" alt="Image de {{ recipe.name }}">
 						{% endfor %}
-
-						{# <img src="/uploads/{{ recipe.image1 }}" alt="Image de {{ recipe.name }}">
-																		{% if recipe.image2 is not null %}
-																			<img src="/uploads/{{ recipe.image2 }}" alt="Image{{ recipe.name }}">
-																		{% endif %} #}
 					</figure>
 					<div class='back-content'>
 						{{ recipe.back_content|raw }}

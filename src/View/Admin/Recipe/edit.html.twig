@@ -4,13 +4,14 @@
 
 	<h1>Edit recipe
 		{{ recipe.name }}</h1>
-	<h4>Erreurs :</h4>
-	<ul>
-		{% for error in errors %}
-			<li class="errors">{{ error }}</li>
-		{% endfor %}
-	</ul>
-
+	{% if errors %}
+		<h4>Erreurs :</h4>
+		<ul>
+			{% for error in errors %}
+				<li class="errors">{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
 	{% include 'Admin/Recipe/_form.html.twig' %}
 
 	<form action="/recipe/add-file" enctype="multipart/form-data" method="post">

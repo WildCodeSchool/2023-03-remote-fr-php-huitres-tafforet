@@ -2,13 +2,15 @@
 
 {% block content %}
 
-    <h1>Ajout d'une nouvelle recette</h1>
-        <h4>Erreurs :</h4>
-            <ul>
-                {% for error in errors %}
-                    <li class="errors">{{ error }}</li>
-                {% endfor %}
-            </ul>
-    {% include 'Admin/Recipe/_form.html.twig' %}
+	<h1>Ajout d'une nouvelle recette</h1>
+	{% if errors %}
+		<h4>Erreurs :</h4>
+		<ul>
+			{% for error in errors %}
+				<li class="errors">{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	{% include 'Admin/Recipe/_form.html.twig' %}
 
 {% endblock %}
