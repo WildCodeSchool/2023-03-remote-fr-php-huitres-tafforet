@@ -2,16 +2,19 @@
 
 {% block content %}
 
-    <h1>Edit product {{ product.name }}</h1>
-    <h4>Erreurs :</h4>
-    <ul>
-        {% for error in errors %}
-            <li class="errors">{{ error }}</li>
-        {% endfor %}
-        </ul>
+	<h1>Modifier produit
+		{{ product.name }}</h1>
+	{% if errors %}
+		<h4>Erreurs :</h4>
+		<ul>
+			{% for error in errors %}
+				<li class="errors">{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
 
-    {% include 'Admin/Product/_form.html.twig' %}
+	{% include 'Admin/Product/_form.html.twig' %}
 
-    <a href="index">Back</a>
+	<a href="index">Back</a>
 
 {% endblock %}
