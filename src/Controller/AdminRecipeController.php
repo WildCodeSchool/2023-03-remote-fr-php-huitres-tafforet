@@ -51,7 +51,7 @@ class AdminRecipeController extends AbstractController
             }
         }
 
-        return $this->twig->render('Admin/recipe/add.html.twig', [
+        return $this->twig->render('Admin/Recipe/add.html.twig', [
             'errors' => $errors
         ]);
     }
