@@ -45,4 +45,16 @@ class FormManager extends AbstractManager
         $this->delete($id);
         return $statement->execute();
     }
+
+    public function selectAll(string $orderBy = '', string $direction = 'ASC'): array
+    {
+        $query = 'SELECT devis.*, GROUP_CONCAT(product.name SEPARATOR ", ") AS product_name FROM ' . static::TABLE .
+        ' LEFT JOIN ' . static::JOINTABLE . ' ON devis.id = devis_product.devis_id
+        LEFT JOIN product ON devis_product.product_id = product.id GROUP BY id';
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+
+        return $this->pdo->query($query)->fetchAll();
+    }
 }

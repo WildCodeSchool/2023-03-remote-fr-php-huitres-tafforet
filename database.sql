@@ -50,8 +50,6 @@ CREATE TABLE IF NOT EXISTS `recipe` (
   `name` VARCHAR(255) NULL,
   `content` TEXT NULL,
   `back_content` TEXT NULL,
-  `image1` VARCHAR(155) NULL,
-  `image2` VARCHAR(155) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -125,6 +123,30 @@ CREATE TABLE IF NOT EXISTS `wine` (
   `type` VARCHAR(255) NULL,
   `name` VARCHAR(255) NULL,
   PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+-- -----------------------------------------------------
+-- Table `file`
+-- -----------------------------------------------------
+CREATE TABLE file (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NULL,
+  `is_image` TINYINT NULL,
+  `recipe_id` INT,
+  `product_id`INT,
+  `position` INT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_file_product1_idx` (`product_id` ASC) VISIBLE,
+  CONSTRAINT `fk_file_product1`
+    FOREIGN KEY (`product_id`)
+    REFERENCES `product` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  INDEX `fk_file_recipe1_idx` (`recipe_id` ASC) VISIBLE,
+  CONSTRAINT `fk_file_recipe1`
+    FOREIGN KEY (`recipe_id`)
+    REFERENCES `recipe` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 INSERT INTO `user` VALUES (1,'admin@test.com','$2y$10$4Fr/E4Lcj8HRTQ5UtXBE4./ut/diPoZQLzICLRQqqFU5NamJpsKOK','Marty','Marty','McFly'),
@@ -240,9 +262,8 @@ INSERT INTO
         `recipe` (
             `name`,
             `content`,
-            `back_content`,
-            `image1`,
-            `image2`
+            `back_content`
+
         )
   VALUES (
   'Huîtres, poivron confit et lard',
@@ -262,9 +283,7 @@ INSERT INTO
   <li>Prenez vos huîtres Marennes Oléron, décrochez juste le petit muscle et laisser les
   en coquille. Au moment de servir vider l’eau de l’huitre Marennes Oléron.
   Ajouter le poivron confit et les carrés de poitrine fumée encore tiède.</li>
-  </ul>',
-  'pleindhuitre.png',
-  'huitrecitron.png'
+  </ul>'
 ), (
   'Eclade de moules',
   '<ul>
@@ -282,9 +301,7 @@ INSERT INTO
   (si elles sont marrons elles manquent de cuisson et on peut couvrir à nouveau
   d’aiguilles de pin et remettre le feu).</li>
   <li>Retirez la braise et dégustez les moules avec un bon vin blanc de pays charentais.</li>
-  </ul>',
-  'eclade.jpg',
-  NULL
+  </ul>'
 ), (
   'Huître, kiwi, gingembre
   et lait de coco',
@@ -303,9 +320,7 @@ INSERT INTO
   <li>Prenez vos huîtres Marennes Oléron, décrochez juste le petit muscle et laisser les en coquille.
   Au moment de servir vider l’eau de l’huitre.</li>
   <li>Ajouter les dés de kiwi et verser une cuillère à café d’infusion coco et gingembre par huître.</li>
-  </ul>',
-  'assietehuitre.jpg',
-  NULL
+  </ul>'
 ), (
   'Huître, cacahuète, miel
   et sauce soja',
@@ -324,9 +339,7 @@ INSERT INTO
   <li>Prenez vos huitres Marennes Oléron, décrochez juste le petit muscle et laisser les en coquille.
   Au moment de servir vider l’eau de l’huître Marennes Oléron.
   Ajouter en nappage le mélange cacahuète, miel et sauce soja.</li>
-  </ul>',
-  'huitrevin.png',
-  'cacahouete.jpg'
+  </ul>'
 );
 
 INSERT INTO wine (type, name)

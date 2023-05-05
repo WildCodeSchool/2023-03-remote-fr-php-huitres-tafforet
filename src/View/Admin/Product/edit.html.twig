@@ -2,20 +2,19 @@
 
 {% block content %}
 
-	<h1>Modifier recette
-		"{{ recipe.name }}"</h1>
-	{% if errors %}
-		<h4>Erreurs :</h4>
-		<ul>
-			{% for error in errors %}
-				<li class="errors">{{ error }}</li>
-			{% endfor %}
-		</ul>
-	{% endif %}
-	{% include 'Admin/Recipe/_form.html.twig' %}
+    <h1>Edit produit "{{ product.name }}"</h1>
+    {% if errors %}
+    <h4>Erreurs :</h4>
+    <ul>
+        {% for error in errors %}
+            <li class="errors">{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% include 'Admin/Product/_form.html.twig' %}
 
-	<form action="/recipe/add-file" enctype="multipart/form-data" method="post">
-		<input type="hidden" name="recipe_id" value="{{ recipe.id }}">
+    <form action="/product/add-file" enctype="multipart/form-data" method="post">
+		<input type="hidden" name="product_id" value="{{ product.id }}">
 		<label for="files">Télécharger des fichiers
 			<input type="file" name="files[]" id="files" multiple accept="image/jpeg, image/jpg, image/png, image/webp">
 		</label>
@@ -25,8 +24,8 @@
 		<thead>
 			<tr>
 				<th>Id</th>
-				<th>Previsualisation</th>
-				<th>Nom du fichier</th>
+				<th>Preview</th>
+				<th>File name</th>
 				<th>Position</th>
 				<th></th>
 			</tr>
@@ -52,6 +51,6 @@
 		</tbody>
 	</table>
 
-	<a href="index">Back</a>
+    <a href="index">Back</a>
 
 {% endblock %}

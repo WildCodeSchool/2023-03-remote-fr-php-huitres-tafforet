@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Liste des évenements</h1>
-    <a href="/event/add">Ajouter un nouvel évenement</a>
+    <a href="/event/add" class="add-admin">Ajouter un nouvel évenement</a>
     <table role="grid">
         <thead>
             <tr>
@@ -21,7 +21,7 @@
                         <a href="/event/edit?id={{event.id}}">Modifier</a>
                     </td>
                     <td>
-                        <a href="/event/delete?id={{event.id}}">Delete</a>
+                        <a href="/event/delete?id={{event.id}}">Supprimer</a>
                     </td>
                 </tr>
             {% endfor %}

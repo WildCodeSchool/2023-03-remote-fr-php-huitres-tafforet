@@ -11,12 +11,7 @@
 		<swiper-slide><img src="/assets/images/image-carrousel/vue-aerienne-marennes-Grand.png" alt="photo_marennes"></swiper-slide>
 		<swiper-slide><img src="/assets/images/image-carrousel/port-du-chapus.jpeg" alt="port"></swiper-slide>
 	</swiper-container>
-
-	<div id="ww_74bb7a75e5c2a" v='1.3' loc='id' a='{"t":"responsive","lang":"fr","sl_lpl":1,"ids":["wl7549"],"font":"Arial","sl_ics":"one","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","sl_tof":"3"}'>Weather Data Source:
-		<a href="https://meteolongue.com/" id="ww_74bb7a75e5c2a_u" target="_blank">Meteo a 25 jours</a>
-	</div>
-	<script async src="https://app1.weatherwidget.org/js/?id=ww_74bb7a75e5c2a"></script>
-
+{% include 'include/_widgetmeteo.html.twig' %}
 	<section class="presentation-entreprise">
 		<div>
 			<img class="ouvrier" src="/assets/images/ouvrier.jpg" alt="ouvrier">
@@ -25,7 +20,7 @@
 			<p>Vous recherchez des huîtres creuses de qualité supérieure en France ? Ne cherchez plus !
 				<br><br>
 
-				Notre entreprise basée dans la magnifique région de Marennes-Oléron, est spécialisée dans la production, l'élevage et l'expédition de ces délicieuses coquillages depuis plus de 70 ans.<br><br>
+				Notre entreprise basée dans la magnifique région de Marennes-Oléron, est spécialisée dans la production, l'élevage et l'expédition de ces délicieux coquillages depuis plus de 70 ans.<br><br>
 
 				Notre établissement de 2 500 m² est équipé des dernières technologies en matière de purification et de dégorgement pour garantir des produits de qualité exceptionnelle. Avec nos 40 hectares de production et de claires d'affinage, nous avons la capacité de répondre à toutes vos demandes.<br><br>
 
@@ -52,9 +47,10 @@
 			<h3>Évènements</h3>
 
 			<ul>
-            {% for event in events %}
-                <li>{{ event.text }} </li>
-            {% endfor %}
+				{% for event in events %}
+					<li>{{ event.text }}
+					</li>
+				{% endfor %}
 			</ul>
 
 			<h3>Horaires</h3>
