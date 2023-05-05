@@ -31,6 +31,8 @@ return [
     'testimonial/add' => ['AdminTestimonialController', 'add'],
     'testimonial/delete' => ['AdminTestimonialController', 'delete', ['id']],
     'admin/delete' => ['AdminController', 'delete', ['id']],
+    'recipe/add-file' => ['AdminRecipeController', 'addFiles',],
+    'recipe/delete-file' => ['AdminRecipeController', 'deleteFile', ['id']],
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],

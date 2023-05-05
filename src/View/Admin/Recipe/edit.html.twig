@@ -2,16 +2,57 @@
 
 {% block content %}
 
-    <h1>Edit recipe {{ recipe.name }}</h1>
-    <h4>Erreurs :</h4>
-    <ul>
-        {% for error in errors %}
-            <li class="errors">{{ error }}</li>
-        {% endfor %}
-        </ul>
+	<h1>Edit recipe
+		{{ recipe.name }}</h1>
+	{% if errors %}
+		<h4>Erreurs :</h4>
+		<ul>
+			{% for error in errors %}
+				<li class="errors">{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	{% include 'Admin/Recipe/_form.html.twig' %}
 
-    {% include 'Admin/Recipe/_form.html.twig' %}
+	<form action="/recipe/add-file" enctype="multipart/form-data" method="post">
+		<input type="hidden" name="recipe_id" value="{{ recipe.id }}">
+		<label for="files">Télécharger des fichiers
+			<input type="file" name="files[]" id="files" multiple accept="image/jpeg, image/jpg, image/png, image/webp">
+		</label>
+		<input type="submit" value="Télécharger">
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Preview</th>
+				<th>File name</th>
+				<th>Position</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
 
-    <a href="index">Back</a>
+			{% for file in files %}
+				<tr>
+					<td>{{ file.id }}</td>
+					<td>
+						<img src="/uploads/{{ file.name }}" alt="" style="max-width: 80px">
+					</td>
+					<td>
+						{{ file.name }}
+					</td>
+					<td>
+						{{ file.position }}
+					</td>
+					<td>
+						<a href="delete-file?id={{ file.id }}" class="danger">supprimer</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="index">Back</a>
 
 {% endblock %}
