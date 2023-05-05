@@ -49,4 +49,46 @@ class FileManager extends AbstractManager
         $statement->bindValue('recipe_id', $recipeId, PDO::PARAM_INT);
         $statement->execute();
     }
+
+    public function insertProduct(string $fileName, int $productId): int
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE .
+            " SET position=position+1 WHERE product_id=:product_id");
+        $statement->bindValue('product_id', $productId, PDO::PARAM_STR);
+        $statement->execute();
+
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`, `product_id`, `position`)
+         VALUES (:name, :product_id, 1)");
+        $statement->bindValue('name', $fileName, PDO::PARAM_STR);
+        $statement->bindValue('product_id', $productId, PDO::PARAM_STR);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
+
+    public function selectAllByproductId(int $productId)
+    {
+        $query = 'SELECT * FROM ' . static::TABLE . ' WHERE product_id=:product_id';
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':product_id', $productId, PDO::PARAM_INT);
+        $statement->execute();
+        return $statement->fetchAll();
+    }
+
+    public function deleteProduct(int $id): void
+    {
+        $file = $this->selectOneById($id);
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE .
+            " SET position=position-1 WHERE position>:position AND product_id=:product_id");
+        $statement->bindValue('product_id', $file['product_id'], PDO::PARAM_INT);
+        $statement->bindValue('position', $file['position'], PDO::PARAM_INT);
+        $statement->execute();
+        parent::delete($id);
+    }
+    public function deleteAllByProductId(int $productId): void
+    {
+        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE product_id=:product_id");
+        $statement->bindValue('product_id', $productId, PDO::PARAM_INT);
+        $statement->execute();
+    }
 }
