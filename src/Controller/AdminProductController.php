@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\ProductManager;
+use App\Model\FileManager;
 
 class AdminProductController extends AbstractController
 {
@@ -77,9 +78,10 @@ class AdminProductController extends AbstractController
                 return null;
             }
         }
-
+        $fileManager = new FileManager();
         return $this->twig->render('Admin/Product/edit.html.twig', [
             'product' => $product,
+            'files' => $fileManager->selectAllByproductId($id),
             'errors' => $errors
         ]);
     }
@@ -90,5 +92,32 @@ class AdminProductController extends AbstractController
         $productManager->delete((int)$id);
 
         header('Location:/product/index');
+    }
+    public function addFiles()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $uploadsDir = __DIR__ . '/../../public/uploads/';
+            if (!is_dir($uploadsDir)) {
+                mkdir($uploadsDir);
+            }
+            $productId = $_POST['product_id'];
+            $fileManager = new FileManager();
+            foreach ($_FILES['files']['tmp_name'] as $index => $tmpName) {
+                $fileName = $_FILES['files']['name'][$index];
+                if (move_uploaded_file($tmpName, $uploadsDir . $fileName)) {
+                    $fileManager->insertProduct($fileName, $productId);
+                }
+            }
+            header('Location: /product/edit?id=' . $productId);
+        }
+    }
+    public function deleteFile(int $id)
+    {
+        $fileManager = new FileManager();
+        $file = $fileManager->selectOneById($id);
+        if (unlink(__DIR__ . '/../../public/uploads/' . $file['name'])) {
+            $fileManager->delete($id);
+        }
+        header('Location: /product/edit?id=' . $file['product_id']);
     }
 }

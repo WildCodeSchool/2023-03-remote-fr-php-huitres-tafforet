@@ -8,6 +8,7 @@ class ProductManager extends AbstractManager
 {
     public const TABLE = 'product';
     public const JOINTABLE = 'category';
+
     public function insert(array $product): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
@@ -33,14 +34,25 @@ class ProductManager extends AbstractManager
         return $statement->execute();
     }
 
-    public function selectAll(string $orderBy = 'id', string $direction = 'ASC'): array
+    public function selectAll(string $orderBy = '', string $direction = 'ASC'): array
     {
         $query = 'SELECT product.*, category.type categoryType, category.id categoryId FROM ' . static::TABLE .
          ' LEFT JOIN ' . static::JOINTABLE . ' ON product.category_id = category.id ';
         if ($orderBy) {
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
         }
+        $products = $this->pdo->query($query)->fetchAll();
+        $fileManager = new FileManager();
+        foreach ($products as &$product) {
+            $product['files'] = $fileManager->selectAllByproductId($product['id']);
+        }
+        return $products;
+    }
 
-        return $this->pdo->query($query)->fetchAll();
+    public function delete(int $id): void
+    {
+        $fileManager = new FileManager();
+        $fileManager->deleteAllByProductId($id);
+        parent::delete($id);
     }
 }
