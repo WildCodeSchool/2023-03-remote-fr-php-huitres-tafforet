@@ -12,7 +12,7 @@ class AdminProductController extends AbstractController
         $productsManager = new productManager();
         $products = $productsManager->selectAll();
 
-        return $this->twig->render('Admin/product/index.html.twig', [
+        return $this->twig->render('Admin/Product/index.html.twig', [
             'products' => $products,
         ]);
     }
@@ -44,7 +44,7 @@ class AdminProductController extends AbstractController
             }
         }
 
-        return $this->twig->render('Admin/product/add.html.twig', [
+        return $this->twig->render('Admin/Product/add.html.twig', [
             'errors' => $errors]);
     }
 
