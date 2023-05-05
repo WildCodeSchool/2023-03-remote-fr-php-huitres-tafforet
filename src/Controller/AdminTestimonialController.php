@@ -40,7 +40,7 @@ class AdminTestimonialController extends AbstractController
             }
         }
 
-        return $this->twig->render('Admin/testimonial/add.html.twig', ['errors' => $errors]);
+        return $this->twig->render('Admin/Testimonial/add.html.twig', ['errors' => $errors]);
     }
 
     public function edit(int $id): ?string
@@ -72,7 +72,7 @@ class AdminTestimonialController extends AbstractController
             }
         }
 
-        return $this->twig->render('Admin/testimonial/edit.html.twig', [
+        return $this->twig->render('Admin/Testimonial/edit.html.twig', [
             'testimonial' => $testimonial,
             'errors' => $errors,
         ]);
