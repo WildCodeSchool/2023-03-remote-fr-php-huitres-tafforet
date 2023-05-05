@@ -131,9 +131,16 @@ CREATE TABLE file (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL,
   `is_image` TINYINT NULL,
-  `recipe_id` INT NOT NULL,
+  `recipe_id` INT,
+  `product_id`INT,
   `position` INT NULL,
   PRIMARY KEY (`id`),
+  INDEX `fk_file_product1_idx` (`product_id` ASC) VISIBLE,
+  CONSTRAINT `fk_file_product1`
+    FOREIGN KEY (`product_id`)
+    REFERENCES `product` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
   INDEX `fk_file_recipe1_idx` (`recipe_id` ASC) VISIBLE,
   CONSTRAINT `fk_file_recipe1`
     FOREIGN KEY (`recipe_id`)

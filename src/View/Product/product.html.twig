@@ -75,7 +75,9 @@
     {% if  product.category_id == 1 %}
 		<article>
 			<div>
-				<img src="/assets/images/{{product.name|replace({"’":"", " ":"_","é":"e","(":"",")":""})|lower}}.png" alt="{{product.name}}">
+				{% for file in product.files %}
+					<img src="/uploads/{{ file.name }}" alt="Image de {{ product.name }}">
+				{% endfor %}
 				<h3>{{product.name}}</h3>
 			</div>
 			<p>
@@ -98,8 +100,10 @@
     {% if  product.category_id == 2 %}
 			<article>
 				<div>
-					<img src="/assets/images/{{product.name|replace({"’":"", " ":"_","é":"e","(":"",")":""})|lower}}.png" alt="{{product.name}}">
-					<h3>{{product.name}}</h3>
+                    {% for file in product.files %}
+						<img src="/uploads/{{ file.name }}" alt="Image de {{ product.name }}">
+					{% endfor %}
+                    <h3>{{product.name}}</h3>
 				</div>
 				<p>
 					{{product.description }}
