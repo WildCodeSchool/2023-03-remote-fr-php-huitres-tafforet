@@ -120,12 +120,15 @@ class AdminRecipeController extends AbstractController
                 $fileExt = pathinfo(basename($_FILES['files']['name'][$index]), PATHINFO_EXTENSION);
                 $fullFileName = $fileName . "-" . uniqid() . "." . $fileExt;
                 $uploadFile = $uploadDir . $fullFileName;
-                move_uploaded_file($tmpName, $uploadFile);
-                $fileManager->insert($fullFileName, $recipeId);
+                if (move_uploaded_file($tmpName, $uploadFile)) {
+                    $fileManager->insert($fullFileName, $recipeId);
+                }
+                header('Location: /recipe/edit?id=' . $recipeId);
             }
-            header('Location: /recipe/edit?id=' . $recipeId);
         }
     }
+
+
     public function deleteFile(int $id)
     {
         $fileManager = new FileManager();
