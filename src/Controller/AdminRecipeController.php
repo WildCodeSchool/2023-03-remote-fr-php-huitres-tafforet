@@ -108,17 +108,20 @@ class AdminRecipeController extends AbstractController
     public function addFiles()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $uploadsDir = __DIR__ . '/../../public/uploads/';
-            if (!is_dir($uploadsDir)) {
-                mkdir($uploadsDir);
+            $uploadDir = __DIR__ . '/../../public/uploads/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir);
             }
             $recipeId = $_POST['recipe_id'];
             $fileManager = new FileManager();
             foreach ($_FILES['files']['tmp_name'] as $index => $tmpName) {
                 $fileName = $_FILES['files']['name'][$index];
-                if (move_uploaded_file($tmpName, $uploadsDir . $fileName)) {
-                    $fileManager->insert($fileName, $recipeId);
-                }
+                $fileName = pathinfo(basename($_FILES['files']['name'][$index]), PATHINFO_FILENAME);
+                $fileExt = pathinfo(basename($_FILES['files']['name'][$index]), PATHINFO_EXTENSION);
+                $fullFileName = $fileName . "-" . uniqid() . "." . $fileExt;
+                $uploadFile = $uploadDir . $fullFileName;
+                move_uploaded_file($tmpName, $uploadFile);
+                $fileManager->insert($fullFileName, $recipeId);
             }
             header('Location: /recipe/edit?id=' . $recipeId);
         }
