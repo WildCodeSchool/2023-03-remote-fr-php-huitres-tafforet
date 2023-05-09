@@ -31,9 +31,6 @@ class AdminProductController extends AbstractController
             if (empty($product['description']) || strlen($product['description']) < 10) {
                 $errors[] = 'Le champ description doit être completé et faire plus de 10 caractères.';
             }
-            if (empty($product['information']) || strlen($product['information']) < 10) {
-                $errors[] = 'Le champ information doit être completé et faire plus de 10 caractères.';
-            }
             // if validation is ok, insert and redirection
             if (empty($errors)) {
                 $productManager = new ProductManager();
@@ -64,9 +61,6 @@ class AdminProductController extends AbstractController
             }
             if (empty($product['description']) || strlen($product['description']) < 10) {
                 $errors[] = 'Le champ description doit être completé et faire plus de 10 caractères.';
-            }
-            if (empty($product['information']) || strlen($product['information']) < 10) {
-                $errors[] = 'Le champ information doit être completé et faire plus de 10 caractères.';
             }
             // if validation is ok, update and redirection
             if (empty($errors)) {
