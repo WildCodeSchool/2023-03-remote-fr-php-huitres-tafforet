@@ -18,7 +18,7 @@ return [
     'recipe/delete' => ['AdminRecipeController', 'delete', ['id']],
     'product' => ['ProductController', 'index'],
     'advice' => ['AdviceController', 'index',],
-    'success' => ['FormController', 'add'],
+    'success' => ['FormController', 'success'],
     'event/index' => ['AdminEventController', 'index'],
     'event/edit' => ['AdminEventController', 'edit', ['id']],
     'event/add' => ['AdminEventController', 'add'],
