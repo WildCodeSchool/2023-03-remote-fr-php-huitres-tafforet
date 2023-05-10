@@ -267,7 +267,7 @@ INSERT INTO
         )
   VALUES (
   'Huîtres, poivron confit et lard',
-  '<li>Pour un plat : calibre N° 2 ou N°3</li>
+  '<ul><li>Pour un plat : calibre N° 2 ou N°3</li>
   <li>Pour l’apéritif : calibre N° 4</li>
   <li>10 à 12 huîtres Marennes Oléron</li>
   <li>3 tranches de poitrine fumée</li>

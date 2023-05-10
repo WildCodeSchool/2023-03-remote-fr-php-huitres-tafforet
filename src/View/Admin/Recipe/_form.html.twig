@@ -6,13 +6,25 @@
 		<label for="title">Nom</label>
 		<input type="text" value="{{ recipe.name }}" name="name" id="name">
 
-		<label for="title">Ingrédients</label>
-		<input type="text" value="{{ recipe.content }}" name="content" id="content">
+		<label for="title">Ingrédients
+			<textarea type="text" value="{{ recipe.content }}" name="content" id="content" rows="10">{{ recipe.content }}</textarea>
+		</label>
 
-		<label for="title">Etapes</label>
-		<input type="text" value="{{ recipe.back_content }}" name="back_content" id="back_content">
+		<label for="title">Etapes
+			<textarea type="text" value="{{ recipe.back_content }}" name="back_content" id="back_content">{{ recipe.back_content }}</textarea>
+		</label>
 
 		<button>Valider</button>
 	</form>
+	{% block javascript %}
+		<script src="https://cdn.ckeditor.com/ckeditor5/37.1.0/classic/ckeditor.js"></script>
+		<script>
+			ClassicEditor.create(document.querySelector('#content')).catch(error => {
+console.error(error)});
+ClassicEditor.create(document.querySelector('#back_content')).catch(error => {
+console.error(error);
+});
+</script>
 
-{% endblock %}
+			{% endblock %}
+		{% endblock %}

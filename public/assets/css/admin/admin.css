@@ -49,4 +49,6 @@
 .errors{
     color: red;
 }
-
+.ck-content{
+    min-height: 150px;
+}
