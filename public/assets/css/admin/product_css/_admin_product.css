@@ -1,0 +1,27 @@
+.product-list-title {
+    margin-bottom: 20px;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th, .product-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.add-admin {
+    display: block;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    .product-table, .product-table thead, .product-table tbody, .product-table th, .product-table td, .product-table tr {
+        display: block;
+    }
+}

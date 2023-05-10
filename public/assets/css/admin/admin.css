@@ -16,7 +16,7 @@
     --font-size: 100%;
 }
 
-.aside-admin{
+.aside-admin {
     padding-left: 2rem;
     padding-right: 2rem;
     display: flex;
@@ -25,30 +25,80 @@
     align-items: center;
     background-color: var(--primary);
 }
-.aside-admin h1{
+
+.aside-admin h1 {
     color: var(--primary-inverse);
     margin-bottom: 1rem;
 }
-.aside-admin a{
+
+.aside-admin a {
     color: var(--primary-inverse);
 }
-.aside-admin ul{
+
+.aside-admin ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 5rem;
     padding-bottom: 1rem;
 }
-.admin-index{
+
+.admin-index {
     margin-left: 2rem;
     margin-right: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.errors{
+
+.errors {
     color: red;
 }
-.ck-content{
+
+@media only screen and (max-width: 1024px) {
+    .aside-admin {
+        flex-direction: row;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .aside-admin h1 {
+        font-size: 1.2rem;
+    }
+
+    .aside-admin ul {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .admin-index {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .aside-admin {
+        flex-direction: row;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .aside-admin h1 {
+        font-size: 1rem;
+    }
+
+    .aside-admin ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .admin-index {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+}
+
+.ck-content {
     min-height: 150px;
 }

@@ -1,0 +1,23 @@
+.recipe-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recipe-table th, .recipe-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.add-recipe-button {
+    display: block;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    .recipe-table, .recipe-table thead, .recipe-table tbody, .recipe-table th, .recipe-table td, .recipe-table tr {
+        display: block;
+    }
+}
