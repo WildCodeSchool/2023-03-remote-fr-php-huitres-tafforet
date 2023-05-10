@@ -98,3 +98,7 @@
         margin-right: 0.5rem;
     }
 }
+
+.ck-content {
+    min-height: 150px;
+}
