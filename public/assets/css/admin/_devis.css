@@ -1,6 +1,7 @@
 .tableau-commandes {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .tableau-commandes thead {
@@ -11,14 +12,11 @@
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    word-wrap: break-word;
 }
 
 .tableau-commandes tr:nth-child(even) {
     background-color: #f2f2f2;
-}
-
-.tableau-commandes tr:hover {
-    background-color: #ddd;
 }
 
 .tableau-commandes a {
@@ -45,4 +43,15 @@
     .tableau-commandes th, .tableau-commandes td {
         padding: 3px;
     }
+
+    .tableau-commandes tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .tableau-commandes th, .tableau-commandes td {
+        display: block;
+        text-align: left;
+    }
+
 }
