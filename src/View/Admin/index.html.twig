@@ -1,16 +1,18 @@
 {% extends "Admin/layout.html.twig" %}
-
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/admin/_devis.css">
+{% endblock %}
 {% block content %}
 	<section class="admin-index">
 		<h1>Admin index</h1>
 		<p>Bonjour
 			{{ user.firstname }}, ici vous pourrez modifier le contenu
-			    de votre site en vous déplaçant dans les différentes rubriques présentes dans la barre
-			    de navigation.</p>
+										de votre site en vous déplaçant dans les différentes rubriques présentes dans la barre
+										de navigation.</p>
 	</section>
 
 	<h2>Devis</h2>
-	<table role="grid">
+	<table role="grid" class="tableau-commandes">
 		<thead>
 			<tr>
 				<th>ID</th>
@@ -21,7 +23,7 @@
 				<th>Adresse</th>
 				<th>Livraison</th>
 				<th>Commentaire</th>
-                <th>Produits</th>
+				<th>Produits</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -37,7 +39,7 @@
 					<td>{{order.address}}</td>
 					<td>{{order.delivery ? 'Oui': 'Non'}}</td>
 					<td>{{order.comment}}</td>
-                    <td>{{order.product_name}}</td>
+					<td>{{order.product_name}}</td>
 					<td>
 						<a href="/admin/delete?id={{order.id}}">Supprimer</a>
 					</td>

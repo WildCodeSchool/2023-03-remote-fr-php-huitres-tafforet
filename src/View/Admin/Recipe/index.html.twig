@@ -1,9 +1,11 @@
 {% extends 'Admin/layout.html.twig' %}
-
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/admin/recipe_css/_admin_recipe.css">
+{% endblock %}
 {% block content %}
 	<h1>Liste des recettes</h1>
-	<a href="/recipe/add" class="add-admin">Ajouter une nouvelle recette</a>
-	<table role="grid">
+	<a href="/recipe/add" class="add-recipe-button">Ajouter une nouvelle recette</a>
+	<table role="grid" class="recipe-table">
 		<thead>
 			<tr>
 				<th>ID</th>
@@ -15,21 +17,20 @@
 		<tbody>
 			{% for recipe in recipes %}
 				<tr>
-					<td>{{recipe.id}}</td>
-					<td>
+					<td class="recipe-cell">{{recipe.id}}</td>
+					<td class="recipe-cell">
 						{{recipe.name}}
 					</td>
-					<td>{{recipe.content|raw}}</td>
-					<td>{{recipe.back_content|raw}}</td>
-					<td>
+					<td class="recipe-cell">{{recipe.content|raw}}</td>
+					<td class="recipe-cell">{{recipe.back_content|raw}}</td>
+					<td class="recipe-cell">
 						<a href="/recipe/edit?id={{recipe.id}}">Modifier</a>
 					</td>
-					<td>
-                        <a href="/recipe/delete?id={{recipe.id}}">Supprimer</a>
+					<td class="recipe-cell">
+						<a href="/recipe/delete?id={{recipe.id}}">Supprimer</a>
 					</td>
 				</tr>
 			{% endfor %}
 		</tbody>
 	</table>
-
 {% endblock %}
