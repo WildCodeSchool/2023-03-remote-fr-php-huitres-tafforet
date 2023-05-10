@@ -1,0 +1,48 @@
+.tableau-commandes {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableau-commandes thead {
+    background-color: #f5f5f5;
+}
+
+.tableau-commandes th, .tableau-commandes td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tableau-commandes tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tableau-commandes tr:hover {
+    background-color: #ddd;
+}
+
+.tableau-commandes a {
+    color: #000000;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .tableau-commandes {
+        font-size: 14px;
+    }
+
+    .tableau-commandes th, .tableau-commandes td {
+        padding: 5px;
+    }
+}
+
+/* Pour les écrans de téléphones */
+@media (max-width: 480px) {
+    .tableau-commandes {
+        font-size: 12px;
+    }
+
+    .tableau-commandes th, .tableau-commandes td {
+        padding: 3px;
+    }
+}

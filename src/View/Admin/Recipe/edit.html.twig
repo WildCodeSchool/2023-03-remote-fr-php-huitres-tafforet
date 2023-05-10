@@ -1,9 +1,9 @@
 {% extends 'Admin/layout.html.twig' %}
-
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/admin/recipe_css/_edit_recipe.css">
+{% endblock %}
 {% block content %}
-
-	<h1>Modifier recette
-		"{{ recipe.name }}"</h1>
+	<h1>Modifier recette "{{ recipe.name }}"</h1>
 	{% if errors %}
 		<h4>Erreurs :</h4>
 		<ul>
@@ -13,15 +13,14 @@
 		</ul>
 	{% endif %}
 	{% include 'Admin/Recipe/_form.html.twig' %}
-
-	<form action="/recipe/add-file" enctype="multipart/form-data" method="post">
+	<form action="/recipe/add-file" enctype="multipart/form-data" method="post" class="upload-form">
 		<input type="hidden" name="recipe_id" value="{{ recipe.id }}">
 		<label for="files">Télécharger des fichiers
 			<input type="file" name="files[]" id="files" multiple accept="image/jpeg, image/jpg, image/png, image/webp">
 		</label>
 		<input type="submit" value="Télécharger">
 	</form>
-	<table>
+	<table class="file-table">
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -34,24 +33,22 @@
 		<tbody>
 			{% for file in files %}
 				<tr>
-					<td>{{ file.id }}</td>
-					<td>
+					<td class="file-cell">{{ file.id }}</td>
+					<td class="file-cell">
 						<img src="/uploads/{{ file.name }}" alt="" style="max-width: 80px">
 					</td>
-					<td>
+					<td class="file-cell">
 						{{ file.name }}
 					</td>
-					<td>
+					<td class="file-cell">
 						{{ file.position }}
 					</td>
-					<td>
+					<td class="file-cell">
 						<a href="delete-file?id={{ file.id }}" class="danger">supprimer</a>
 					</td>
 				</tr>
 			{% endfor %}
 		</tbody>
 	</table>
-
-	<a href="index">Back</a>
-
+	<a href="index" class="back-button">Back</a>
 {% endblock %}

@@ -1,26 +1,26 @@
 {% extends 'Admin/layout.html.twig' %}
-
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/admin/product_css/_edit_product.css">
+{% endblock %}
 {% block content %}
-
-    <h1>Edit produit "{{ product.name }}"</h1>
-    {% if errors %}
-    <h4>Erreurs :</h4>
-    <ul>
-        {% for error in errors %}
-            <li class="errors">{{ error }}</li>
-        {% endfor %}
-        </ul>
-    {% endif %}
-    {% include 'Admin/Product/_form.html.twig' %}
-
-    <form action="/product/add-file" enctype="multipart/form-data" method="post">
+	<h1 class="product-title">Edit produit "{{ product.name }}"</h1>
+	{% if errors %}
+		<h4>Erreurs :</h4>
+		<ul>
+			{% for error in errors %}
+				<li class="errors">{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	{% include 'Admin/Product/_form.html.twig' %}
+	<form action="/product/add-file" enctype="multipart/form-data" method="post" class="upload-form">
 		<input type="hidden" name="product_id" value="{{ product.id }}">
 		<label for="files">Télécharger des fichiers
 			<input type="file" name="files[]" id="files" multiple accept="image/jpeg, image/jpg, image/png, image/webp">
 		</label>
 		<input type="submit" value="Télécharger">
 	</form>
-	<table>
+	<table class="file-table">
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -33,24 +33,22 @@
 		<tbody>
 			{% for file in files %}
 				<tr>
-					<td>{{ file.id }}</td>
-					<td>
+					<td class="file-cell">{{ file.id }}</td>
+					<td class="file-cell">
 						<img src="/uploads/{{ file.name }}" alt="" style="max-width: 80px">
 					</td>
-					<td>
+					<td class="file-cell">
 						{{ file.name }}
 					</td>
-					<td>
+					<td class="file-cell">
 						{{ file.position }}
 					</td>
-					<td>
+					<td class="file-cell">
 						<a href="delete-file?id={{ file.id }}" class="danger">supprimer</a>
 					</td>
 				</tr>
 			{% endfor %}
 		</tbody>
 	</table>
-
-    <a href="index">Back</a>
-
+	<a href="index" class="back-button">Back</a>
 {% endblock %}
