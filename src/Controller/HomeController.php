@@ -18,4 +18,8 @@ class HomeController extends AbstractController
             'events' => $eventManager->selectAll(), 'testimonials' => $testimonialManager->selectAll()
         ]);
     }
+    public function notFound(): string
+    {
+        return $this->twig->render('Home/notfound.html.twig');
+    }
 }
